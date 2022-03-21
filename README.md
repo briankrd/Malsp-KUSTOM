@@ -15,6 +15,8 @@ Malsp is a preset for KLCK that brings the AOSP lock screen experience to older 
 
 - Customize battery icon
 
+- Hide navigation hint
+
 - Force small clock
 
 - Custom carrier name
@@ -37,20 +39,24 @@ Malsp is a preset for KLCK that brings the AOSP lock screen experience to older 
 
 ![Screenshot_20220320-235659_Kustom Lock](https://user-images.githubusercontent.com/51493723/159222022-7eba602d-e5fd-46b1-921e-b552b5e5a126.png) ![Screenshot_20220321-000401_Kustom Lock](https://user-images.githubusercontent.com/51493723/159222067-b63536b1-7aad-4f72-8ad2-253e32a2e601.png) ![Screenshot_20220321-001218_Kustom Lock](https://user-images.githubusercontent.com/51493723/159222099-c3885870-1b4f-45c2-9acc-3085ae0b2c3f.png)
 
-###### Wallpaper: Doodle by Patrick Zedler
+(Wallpaper: Doodle by Patrick Zedler)
 
 ## Installation
 Installation is simple.
 
-After downloading the preset, move the file to the "lockscreen" folder which is inside the "kustom" folder which by default is on the internal storage of the target device.
+After downloading the preset, move the file to the "lockscreen" folder which is inside the "Kustom" folder which by default is on the internal storage of the target device.
 
 After that, it's a matter of opening the KLCK application and loading the preset from the Library section.
 
 ## Downloads
 
-There are no releases available for now
+Lastest Beta on [Releases section](https://github.com/briankrd/Malsp-KUSTOM/releases/tag/beta)
 
-## 
+## Settings location
+
+Preset settings are located in the "Globals" tab of the editor further in the KLCK app
+
+## Source
 
 The source of this preset is the resource folder extracted from the preset file, there things like fonts, images, icons and more used in this project will be available.
 

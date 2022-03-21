@@ -1,0 +1,3826 @@
+{
+  "preset_info": {
+    "version": 11,
+    "title": "Malsp (beta1 twodotzero)",
+    "description": "Open Material Lock Screen Preset for KLCK Pro",
+    "author": "brianKordy",
+    "email": "porxordes@protonmail.com",
+    "width": 360,
+    "height": 740,
+    "xscreens": 2,
+    "yscreens": 2,
+    "features": "MUSIC NOTIFICATIONS",
+    "release": 355112309,
+    "locked": false,
+    "pflags": 0
+  },
+  "preset_root": {
+    "internal_type": "RootLayerModule",
+    "internal_events": [
+      {
+        "type": "SCROLL_END",
+        "action": "KUSTOM_ACTION",
+        "scroll_dir": "TOP",
+        "kustom_action": "UNLOCK"
+      }
+    ],
+    "globals_list": {
+      "settings": {
+        "index": 4,
+        "type": "FOLDER",
+        "title": "Settings",
+        "description": "Configure the screen lock and its elements"
+      },
+      "settings/conficon": {
+        "index": 6,
+        "type": "SWITCH",
+        "title": "ConfIcon",
+        "description": "Lock Icon: Hide the lock icon at the bottom of the lock screen (On: Hide, Off: Show)"
+      },
+      "settings/confstba": {
+        "index": 8,
+        "type": "SWITCH",
+        "title": "ConfStBa",
+        "description": "Hide Status Bar: Hide the top status bar (On: Hide, Off: Show)"
+      },
+      "settings/confphnc": {
+        "index": 9,
+        "type": "SWITCH",
+        "title": "ConfPHNC",
+        "description": "Notification content (Experimental): Reduce the content of notifications to just the Name of the app and the time, hiding content that may be sensitive"
+      },
+      "gbctrls": {
+        "index": 12,
+        "type": "FOLDER",
+        "title": "GBCtrls"
+      },
+      "settings/confnvba": {
+        "index": 14,
+        "type": "SWITCH",
+        "title": "ConfNvBa",
+        "description": "Hide Navigation Hint: Hides the bottom (Line) indicator for lock screen navigation gestures (On: Hide, Off: Show)",
+        "value": 0
+      },
+      "settings/conffnts": {
+        "index": 15,
+        "type": "FOLDER",
+        "title": "ConfFnts",
+        "description": "Text Fonts: Change the fonts of the interface and clock face"
+      },
+      "settings/conffnts/clckfnts": {
+        "index": 16,
+        "type": "FOLDER",
+        "title": "ClckFnts",
+        "description": "Clock face"
+      },
+      "settings/conffnts/clckfnts/lscrnfnt": {
+        "index": 17,
+        "type": "FONT",
+        "title": "LScrnFnt",
+        "description": "Lock screen clock font",
+        "value": "kfile://org.kustom.sdcard.000/fonts/Roboto-Regular.ttf"
+      },
+      "settings/conffnts/uigenfnt": {
+        "index": 19,
+        "type": "FONT",
+        "title": "UiGenFnt",
+        "description": "this option is not available in this version",
+        "toggles": 10,
+        "global_formula": "Unavailable Option"
+      },
+      "gbctrls/sysmonet": {
+        "index": 21,
+        "type": "FOLDER",
+        "title": "SysMonet"
+      },
+      "gbctrls/sysmonet/mntbeta1": {
+        "index": 22,
+        "type": "COLOR",
+        "title": "mntBeta1",
+        "value": "#FFD6F3FF"
+      },
+      "gbctrls/sysmonet/mnbeta2": {
+        "index": 23,
+        "type": "COLOR",
+        "title": "mnBeta2",
+        "value": "#FFFF00FF",
+        "toggles": 10,
+        "global_formula": "$if(si(darkmode) ~= \"1\", \"#FF21292B\", #FFE3F9FF)$"
+      },
+      "gbctrls/sysmonet/mnbeta3": {
+        "index": 24,
+        "type": "COLOR",
+        "title": "mnBeta3",
+        "toggles": 10,
+        "global_formula": "$if(si(darkmode) ~= \"1\", \"#FFFFFFFF\", #Ff000000)$"
+      },
+      "gbctrls/sysmonet/mnbeta4": {
+        "index": 25,
+        "type": "COLOR",
+        "title": "mnBeta4",
+        "toggles": 10,
+        "global_formula": "$if(si(darkmode) ~= \"1\", \"#C0FFFFFF\", #C0000000)$"
+      },
+      "gbctrls/sysmonet/mnbeta5": {
+        "index": 26,
+        "type": "COLOR",
+        "title": "mnBeta5",
+        "value": "#FF7EB8C7"
+      },
+      "gbctrls/sysmonet/mnbeta6": {
+        "index": 27,
+        "type": "COLOR",
+        "title": "mnBeta6"
+      },
+      "settings/confbist": {
+        "index": 28,
+        "type": "LIST",
+        "title": "ConfBISt",
+        "description": "Battery icon style: Change the style of the icon displayed at the top right",
+        "entries": "Circle, Battery Portrait, Battery Landscape, Only Text",
+        "value": "Battery Portrait"
+      },
+      "settings/confmclk": {
+        "index": 29,
+        "type": "SWITCH",
+        "title": "ConfMClk",
+        "description": "Force small clock: Always show the small clock even if there are no notifications",
+        "value": 0
+      },
+      "settings/confcarr": {
+        "index": 30,
+        "type": "TEXT",
+        "title": "ConfCarr",
+        "description": "Custom carrier name: Change the name of the carrier for the text you want (Leave empty to return to the default name)",
+        "value": ""
+      },
+      "gbctrls/carriegn": {
+        "index": 31,
+        "type": "TEXT",
+        "title": "CarriEgn",
+        "value": "$if(nc(operator) ~= \"NoOperator\", \"No Service\", nc(operator))$"
+      }
+    },
+    "background_bitmap": "kfile://org.kustom.provider/bitmaps/IMG3a1a5226039df9eade32643044b4659",
+    "viewgroup_items": [
+      {
+        "internal_type": "ShapeModule",
+        "shape_type": "RECT",
+        "shape_width": 720.0,
+        "shape_height": 1480.0,
+        "paint_color": "#30000000",
+        "internal_title": "Uklck.Background"
+      },
+      {
+        "internal_type": "OverlapLayerModule",
+        "position_offset_y": -167.0,
+        "internal_animations": [
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 150.0
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          },
+          {
+            "type": "FORMULA",
+            "speed": 23.0,
+            "angle": 300.0,
+            "duration": 2.0,
+            "formula": "$if(ni(count)<1,1, 0)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "SCALE",
+            "amount": 32.0,
+            "duration": 2.0,
+            "formula": "$if(ni(count)<1,1, 0)$"
+          },
+          {
+            "type": "FORMULA",
+            "speed": 5.0,
+            "angle": 300.0,
+            "duration": 4.0,
+            "formula": "$if(ni(count)<1,1, 0)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "action": "FADE",
+            "rule": "UP_TO_CENTER",
+            "speed": 400.0
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE",
+            "duration": 2.0,
+            "formula": "$if(ni(count)<1,1, 0)$"
+          }
+        ],
+        "internal_title": "Uklck.Elements.Widgets.NewMediaControls",
+        "internal_toggles": {
+          "config_visible": 10
+        },
+        "internal_formulas": {
+          "config_visible": "$if(mi(state) ~= \"STOPPED\", \"REMOVE\", ALWAYS)$"
+        },
+        "internal_events": [
+          {
+            "type": "SINGLE_TAP",
+            "action": "MUSIC",
+            "music_action": "OPEN_APP"
+          }
+        ],
+        "viewgroup_items": [
+          {
+            "internal_type": "ShapeModule",
+            "shape_type": "RECT",
+            "shape_width": 664.0,
+            "shape_height": 182.0,
+            "shape_corners": 50.0,
+            "paint_color": "#FFEDF1F3"
+          },
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "fx_gradient_bitmap": 10
+            },
+            "internal_formulas": {
+              "fx_gradient_bitmap": "$mi(cover)$"
+            },
+            "shape_width": 124.0,
+            "shape_corners": 24.0,
+            "paint_color": "#FF000000",
+            "fx_gradient": "BITMAP",
+            "position_anchor": "CENTERLEFT",
+            "position_padding_left": 32.0,
+            "position_padding_top": 2.0
+          },
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "paint_color": 100
+            },
+            "internal_globals": {
+              "paint_color": "gbctrls/sysmonet/mntbeta1"
+            },
+            "shape_type": "CIRCLE",
+            "shape_width": 40.0,
+            "position_anchor": "CENTERLEFT",
+            "position_padding_left": 127.0,
+            "position_padding_top": 100.0
+          },
+          {
+            "internal_type": "BitmapModule",
+            "internal_toggles": {
+              "bitmap_bitmap": 10,
+              "bitmap_filter_color": 10
+            },
+            "internal_formulas": {
+              "bitmap_bitmap": "$ni(mi(package), icon)$",
+              "bitmap_filter_color": "$ce(gv(gbctrls/sysmonet/mntbeta1), contrast)$"
+            },
+            "bitmap_width": 24.0,
+            "bitmap_filter": "COLORIZE",
+            "position_padding_right": 370.0,
+            "position_padding_top": 100.0
+          },
+          {
+            "internal_type": "OverlapLayerModule",
+            "position_anchor": "TOPRIGHT",
+            "position_padding_right": 32.0,
+            "position_padding_top": 32.0,
+            "internal_events": [
+              {
+                "type": "SINGLE_TAP",
+                "action": "LAUNCH_ACTIVITY",
+                "intent": "intent:#Intent;component=com.android.settings/.Settings%24SoundSettingsActivity;S.org.kustom.intent.label=Settings;end"
+              }
+            ],
+            "viewgroup_items": [
+              {
+                "internal_type": "ShapeModule",
+                "internal_toggles": {
+                  "paint_color": 100
+                },
+                "internal_globals": {
+                  "paint_color": "gbctrls/sysmonet/mntbeta1"
+                },
+                "shape_type": "RECT",
+                "shape_width": 185.0,
+                "shape_height": 44.0,
+                "shape_corners": 50.0
+              },
+              {
+                "internal_type": "FontIconModule",
+                "internal_toggles": {
+                  "paint_color": 10
+                },
+                "internal_formulas": {
+                  "paint_color": "$ce(gv(gbctrls/sysmonet/mntbeta1), contrast)$"
+                },
+                "internal_globals": {
+                  "paint_color": "gbctrls/sysmonet/mntbeta1"
+                },
+                "icon_icon": "smartphone",
+                "icon_size": 22.0,
+                "position_anchor": "CENTERLEFT",
+                "position_padding_left": 16.0
+              },
+              {
+                "internal_type": "TextModule",
+                "internal_toggles": {
+                  "paint_color": 10
+                },
+                "internal_formulas": {
+                  "paint_color": "$ce(gv(gbctrls/sysmonet/mntbeta1), contrast)$"
+                },
+                "text_expression": "Audio output",
+                "position_anchor": "CENTERLEFT",
+                "position_padding_left": 50.0
+              }
+            ]
+          },
+          {
+            "internal_type": "TextModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(gv(gbctrls/sysmonet/mntbeta1), contrast)$"
+            },
+            "text_expression": "$mi(title)$",
+            "text_size_type": "FIXED_WIDTH",
+            "text_width": 370.0,
+            "text_lines": 1.0,
+            "text_size": 28.0,
+            "position_anchor": "CENTERLEFT",
+            "position_padding_left": 180.0,
+            "position_padding_bottom": 50.0
+          },
+          {
+            "internal_type": "TextModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(gv(gbctrls/sysmonet/mntbeta1), contrast)$"
+            },
+            "text_expression": "$mi(artist)$",
+            "text_size_type": "FIXED_WIDTH",
+            "text_width": 370.0,
+            "text_lines": 1.0,
+            "text_size": 26.0,
+            "position_anchor": "CENTERLEFT",
+            "position_padding_left": 180.0,
+            "position_padding_top": 50.0
+          },
+          {
+            "internal_type": "FontIconModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(gv(gbctrls/sysmonet/mntbeta1), contrast)$"
+            },
+            "icon_set": "kfile://org.kustom.provider/icons/entypo.ttf",
+            "icon_icon": "controller-next",
+            "icon_size": 50.0,
+            "position_anchor": "BOTTOMRIGHT",
+            "position_padding_right": 32.0,
+            "position_padding_bottom": 25.0,
+            "internal_events": [
+              {
+                "type": "SINGLE_TAP",
+                "action": "MUSIC",
+                "music_action": "NEXT"
+              }
+            ]
+          },
+          {
+            "internal_type": "FontIconModule",
+            "internal_toggles": {
+              "paint_color": 10,
+              "icon_icon": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(gv(gbctrls/sysmonet/mntbeta1), contrast)$",
+              "icon_icon": "$if(mi(state) ~= \"PLAYING\", \"controller-paus\", controller-play)$"
+            },
+            "icon_set": "kfile://org.kustom.provider/icons/entypo.ttf",
+            "icon_icon": "controller-paus",
+            "icon_size": 41.0,
+            "position_anchor": "BOTTOMRIGHT",
+            "position_padding_right": 126.0,
+            "position_padding_bottom": 30.0,
+            "internal_events": [
+              {
+                "type": "SINGLE_TAP",
+                "action": "MUSIC"
+              }
+            ]
+          },
+          {
+            "internal_type": "FontIconModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(gv(gbctrls/sysmonet/mntbeta1), contrast)$"
+            },
+            "icon_set": "kfile://org.kustom.provider/icons/entypo.ttf",
+            "icon_icon": "controller-jump-to-start",
+            "icon_size": 50.0,
+            "position_anchor": "BOTTOMRIGHT",
+            "position_padding_right": 212.0,
+            "position_padding_bottom": 25.0,
+            "internal_events": [
+              {
+                "type": "SINGLE_TAP",
+                "action": "MUSIC",
+                "music_action": "PREVIOUS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "internal_type": "OverlapLayerModule",
+        "position_offset_y": -167.0,
+        "internal_animations": [
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          },
+          {
+            "type": "FORMULA",
+            "speed": 23.0,
+            "angle": 300.0,
+            "duration": 2.0,
+            "formula": "$if(ni(count)<1,1, 0)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "SCALE",
+            "amount": 32.0,
+            "duration": 2.0,
+            "formula": "$if(ni(count)<1,1, 0)$"
+          },
+          {
+            "type": "FORMULA",
+            "speed": 5.0,
+            "angle": 300.0,
+            "duration": 4.0,
+            "formula": "$if(ni(count)<1,1, 0)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "action": "FADE",
+            "rule": "UP_TO_CENTER",
+            "speed": 400.0
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE_INVERTED",
+            "amount": 100.0,
+            "duration": 2.0,
+            "formula": "$if(ni(count)<1,1, 0)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 80.0
+          }
+        ],
+        "internal_title": "Uklck.Elements.Widgets.NewMediaControls.Mini",
+        "internal_toggles": {
+          "config_visible": 10
+        },
+        "internal_formulas": {
+          "config_visible": "$if(mi(state) ~= \"STOPPED\", \"REMOVE\", ALWAYS)$"
+        },
+        "internal_events": [
+          {
+            "type": "SINGLE_TAP",
+            "action": "MUSIC",
+            "music_action": "OPEN_APP"
+          }
+        ],
+        "viewgroup_items": [
+          {
+            "internal_type": "ShapeModule",
+            "shape_type": "RECT",
+            "shape_width": 664.0,
+            "shape_height": 182.0,
+            "shape_corners": 50.0,
+            "paint_color": "#00EDF1F3"
+          },
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "fx_gradient_bitmap": 10
+            },
+            "internal_formulas": {
+              "fx_gradient_bitmap": "$mi(cover)$"
+            },
+            "shape_width": 124.0,
+            "shape_corners": 24.0,
+            "paint_color": "#FF000000",
+            "fx_gradient": "BITMAP",
+            "position_anchor": "CENTERLEFT",
+            "position_padding_left": 32.0,
+            "position_padding_top": 2.0
+          },
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "paint_color": 100
+            },
+            "internal_globals": {
+              "paint_color": "gbctrls/sysmonet/mntbeta1"
+            },
+            "shape_type": "CIRCLE",
+            "shape_width": 40.0,
+            "position_anchor": "CENTERLEFT",
+            "position_padding_left": 127.0,
+            "position_padding_top": 100.0
+          },
+          {
+            "internal_type": "BitmapModule",
+            "internal_toggles": {
+              "bitmap_bitmap": 10,
+              "bitmap_filter_color": 10
+            },
+            "internal_formulas": {
+              "bitmap_bitmap": "$ni(mi(package), icon)$",
+              "bitmap_filter_color": "$ce(gv(gbctrls/sysmonet/mntbeta1), contrast)$"
+            },
+            "bitmap_width": 24.0,
+            "bitmap_filter": "COLORIZE",
+            "position_padding_right": 370.0,
+            "position_padding_top": 100.0
+          },
+          {
+            "internal_type": "TextModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(si(wpcolor2), contrast)$"
+            },
+            "text_expression": "$mi(title)$",
+            "text_size_type": "FIXED_WIDTH",
+            "text_width": 370.0,
+            "text_lines": 1.0,
+            "text_size": 28.0,
+            "position_anchor": "CENTERLEFT",
+            "position_padding_left": 180.0,
+            "position_padding_bottom": 50.0
+          },
+          {
+            "internal_type": "TextModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(si(wpcolor2), contrast)$"
+            },
+            "text_expression": "$mi(artist)$",
+            "text_size_type": "FIXED_WIDTH",
+            "text_width": 370.0,
+            "text_lines": 1.0,
+            "text_size": 26.0,
+            "position_anchor": "CENTERLEFT",
+            "position_padding_left": 180.0,
+            "position_padding_top": 50.0
+          },
+          {
+            "internal_type": "FontIconModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(si(wpcolor2), contrast)$"
+            },
+            "icon_set": "kfile://org.kustom.provider/icons/entypo.ttf",
+            "icon_icon": "controller-next",
+            "icon_size": 56.0,
+            "position_anchor": "CENTERRIGHT",
+            "position_padding_right": 32.0,
+            "internal_events": [
+              {
+                "type": "SINGLE_TAP",
+                "action": "MUSIC",
+                "music_action": "NEXT"
+              }
+            ]
+          },
+          {
+            "internal_type": "FontIconModule",
+            "internal_toggles": {
+              "paint_color": 10,
+              "icon_icon": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(si(wpcolor2), contrast)$",
+              "icon_icon": "$if(mi(state) ~= \"PLAYING\", \"controller-paus\", controller-play)$"
+            },
+            "icon_set": "kfile://org.kustom.provider/icons/entypo.ttf",
+            "icon_icon": "controller-paus",
+            "icon_size": 47.0,
+            "position_anchor": "CENTERRIGHT",
+            "position_padding_right": 126.0,
+            "position_padding_bottom": 3.0,
+            "internal_events": [
+              {
+                "type": "SINGLE_TAP",
+                "action": "MUSIC"
+              }
+            ]
+          },
+          {
+            "internal_type": "FontIconModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(si(wpcolor2), contrast)$"
+            },
+            "icon_set": "kfile://org.kustom.provider/icons/entypo.ttf",
+            "icon_icon": "controller-jump-to-start",
+            "icon_size": 56.0,
+            "position_anchor": "CENTERRIGHT",
+            "position_padding_right": 212.0,
+            "internal_events": [
+              {
+                "type": "SINGLE_TAP",
+                "action": "MUSIC",
+                "music_action": "PREVIOUS"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "internal_type": "ShapeModule",
+        "shape_type": "RECT",
+        "shape_width": 664.0,
+        "shape_height": 58.0,
+        "shape_corners": 12.0,
+        "paint_color": "#FF464646",
+        "paint_mode": "SRC",
+        "position_offset_y": -132.0,
+        "internal_title": "Uklck.Elements.Sect.Notifications.R1.BckgrndUni",
+        "internal_toggles": {
+          "position_offset_x": 0,
+          "position_offset_y": 0,
+          "paint_color": 100
+        },
+        "internal_formulas": {
+          "position_offset_x": "$if(ni(count)>1, 0, 99999)$",
+          "position_offset_y": "$149-gv(offset)$",
+          "paint_color": ""
+        },
+        "internal_animations": [
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 150.0
+          },
+          {
+            "type": "FORMULA",
+            "speed": 25.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 1.0,
+            "trigger": "settings/confphnc",
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          },
+          {
+            "type": "SCROLL_Y",
+            "action": "FADE",
+            "rule": "UP_TO_CENTER",
+            "speed": 400.0
+          },
+          {
+            "type": "FORMULA",
+            "speed": 5.0,
+            "angle": 90.0,
+            "duration": 4.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "SCALE_Y",
+            "anchor": "MODULE_TOP",
+            "ease": "INVERTED",
+            "amount": 95.0,
+            "duration": 2.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>1,1, 0)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "SCALE_Y",
+            "anchor": "MODULE_TOP",
+            "ease": "INVERTED",
+            "amount": 5.0,
+            "duration": 4.0,
+            "delay": 3.0,
+            "formula": "$if(ni(count)>1,1, 0)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>1,1, 0)$"
+          }
+        ],
+        "internal_globals": {
+          "paint_color": "gbctrls/sysmonet/mnbeta2"
+        }
+      },
+      {
+        "internal_type": "OverlapLayerModule",
+        "internal_title": "Uklck.Elements.Sect.Notifications.R1.Content",
+        "internal_animations": [
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 150.0
+          },
+          {
+            "type": "FORMULA",
+            "speed": 25.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE_INVERTED",
+            "duration": 2.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 1.0,
+            "trigger": "settings/confphnc",
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          },
+          {
+            "type": "SCROLL_Y",
+            "action": "FADE",
+            "rule": "UP_TO_CENTER",
+            "speed": 400.0
+          },
+          {
+            "type": "FORMULA",
+            "speed": 5.0,
+            "angle": 90.0,
+            "duration": 4.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "SCALE_Y",
+            "anchor": "MODULE_TOP",
+            "ease": "INVERTED",
+            "amount": 95.0,
+            "duration": 2.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "SCALE_Y",
+            "anchor": "MODULE_TOP",
+            "ease": "INVERTED",
+            "amount": 5.0,
+            "duration": 4.0,
+            "delay": 3.0,
+            "formula": "$if(ni(count)>0,1, 0)$"
+          }
+        ],
+        "position_offset_y": -181.0,
+        "internal_toggles": {
+          "config_visible": 0,
+          "position_offset_y": 0
+        },
+        "internal_formulas": {
+          "config_visible": "$if(ni(count)>0, ALWAYS, NEVER)$",
+          "position_offset_y": "$148-gv(offset)$"
+        },
+        "viewgroup_items": [
+          {
+            "internal_type": "ShapeModule",
+            "shape_type": "RECT",
+            "shape_width": 664.0,
+            "shape_height": 154.0,
+            "shape_corners": 50.0,
+            "paint_color": "#FF464646",
+            "paint_mode": "SRC",
+            "internal_toggles": {
+              "paint_color": 100
+            },
+            "internal_formulas": {
+              "paint_color": ""
+            },
+            "internal_globals": {
+              "paint_color": "gbctrls/sysmonet/mnbeta2"
+            }
+          },
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$if(bp(vibrant, ni(0, bicon))=\"\",gv(gbctrls/sysmonet/mnbeta5),bp(vibrant, ni(0, bicon)))$"
+            },
+            "shape_type": "CIRCLE",
+            "shape_width": 54.0,
+            "position_anchor": "CENTERLEFT",
+            "position_padding_left": 32.0
+          },
+          {
+            "internal_type": "BitmapModule",
+            "internal_toggles": {
+              "bitmap_bitmap": 10,
+              "bitmap_filter_color": 100
+            },
+            "internal_formulas": {
+              "bitmap_bitmap": "$ni(0, icon)$",
+              "bitmap_filter_color": ""
+            },
+            "position_padding_left": 44.0,
+            "position_anchor": "CENTERLEFT",
+            "bitmap_width": 30.0,
+            "bitmap_filter": "COLORIZE",
+            "internal_globals": {
+              "bitmap_filter_color": "gbctrls/sysmonet/mnbeta2"
+            },
+            "bitmap_filter_color": "#CD000000"
+          },
+          {
+            "internal_type": "TextModule",
+            "position_padding_right": 40.0,
+            "position_anchor": "CENTERRIGHT",
+            "text_expression": "$ni(0, title)$",
+            "text_size_type": "FIXED_WIDTH",
+            "text_size": 26.0,
+            "text_width": 497.0,
+            "text_lines": 1.0,
+            "text_family": "kfile://org.kustom.provider/fonts/Roboto-Medium.ttf",
+            "internal_toggles": {
+              "paint_color": 100
+            },
+            "internal_formulas": {
+              "paint_color": ""
+            },
+            "internal_globals": {
+              "paint_color": "gbctrls/sysmonet/mnbeta3"
+            },
+            "position_padding_bottom": 40.0
+          },
+          {
+            "internal_type": "TextModule",
+            "position_padding_right": 40.0,
+            "position_padding_top": 50.0,
+            "position_anchor": "CENTERRIGHT",
+            "text_expression": "$ni(0, text)$",
+            "text_size_type": "FIXED_WIDTH",
+            "text_size": 22.0,
+            "text_width": 497.0,
+            "text_lines": 1.0,
+            "internal_toggles": {
+              "paint_color": 100
+            },
+            "internal_formulas": {
+              "paint_color": ""
+            },
+            "internal_globals": {
+              "paint_color": "gbctrls/sysmonet/mnbeta4"
+            }
+          },
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_globals": {
+              "paint_color": "controls"
+            },
+            "position_padding_right": 25.0,
+            "position_anchor": "CENTERRIGHT",
+            "shape_type": "CIRCLE",
+            "shape_width": 45.0,
+            "internal_formulas": {
+              "paint_color": "$if(si(darkmode) ~= \"1\", \"#20FFFFFF\", #10000000)$"
+            },
+            "internal_events": [
+              {
+                "type": "SINGLE_TAP",
+                "action": "KUSTOM_ACTION",
+                "kustom_action": "NOTIF_OPEN",
+                "notification": "0"
+              }
+            ]
+          },
+          {
+            "internal_type": "FontIconModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$if(si(darkmode) ~= \"1\", \"#C0FFFFFF\", #C0000000)$"
+            },
+            "position_padding_right": 30.0,
+            "position_anchor": "CENTERRIGHT",
+            "icon_size": 34.0,
+            "icon_set": "kfile://org.kustom.provider/icons/material.ttf",
+            "icon_icon": "expand_more"
+          }
+        ]
+      },
+      {
+        "internal_type": "ShapeModule",
+        "shape_type": "RECT",
+        "shape_width": 664.0,
+        "shape_height": 58.0,
+        "shape_corners": 12.0,
+        "paint_color": "#FF464646",
+        "paint_mode": "SRC",
+        "position_offset_y": 26.0,
+        "internal_toggles": {
+          "position_offset_y": 0,
+          "shape_corners": 0,
+          "paint_color": 100
+        },
+        "internal_formulas": {
+          "position_offset_y": "$if(ni(count)>1, 326-gv(offset), 99999)$",
+          "shape_corners": "",
+          "paint_color": ""
+        },
+        "internal_animations": [
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 150.0
+          },
+          {
+            "type": "FORMULA",
+            "speed": 35.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "SCALE_Y",
+            "anchor": "MODULE_TOP",
+            "speed": 55.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "delay": 0.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 1.0,
+            "trigger": "settings/confphnc",
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "action": "FADE",
+            "rule": "UP_TO_CENTER",
+            "speed": 400.0
+          },
+          {
+            "type": "FORMULA",
+            "speed": 5.0,
+            "angle": 90.0,
+            "duration": 4.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "SCALE_Y",
+            "anchor": "MODULE_TOP",
+            "ease": "INVERTED",
+            "amount": 95.0,
+            "duration": 2.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>2,1, 0)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "SCALE_Y",
+            "anchor": "MODULE_TOP",
+            "ease": "INVERTED",
+            "amount": 5.0,
+            "duration": 4.0,
+            "delay": 3.0,
+            "formula": "$if(ni(count)>2,1, 0)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>2,1, 0)$"
+          }
+        ],
+        "internal_title": "Uklck.Elements.Sect.Notifications.R2.BckgrndUni",
+        "internal_globals": {
+          "paint_color": "gbctrls/sysmonet/mnbeta2"
+        }
+      },
+      {
+        "internal_type": "OverlapLayerModule",
+        "position_padding_top": 25.0,
+        "internal_animations": [
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 150.0
+          },
+          {
+            "type": "FORMULA",
+            "speed": 25.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE_INVERTED",
+            "duration": 2.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>1,1, 0)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 1.0,
+            "trigger": "settings/confphnc",
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "action": "FADE",
+            "rule": "UP_TO_CENTER",
+            "speed": 400.0
+          },
+          {
+            "type": "FORMULA",
+            "speed": 5.0,
+            "angle": 90.0,
+            "duration": 4.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "SCALE_Y",
+            "anchor": "MODULE_TOP",
+            "ease": "INVERTED",
+            "amount": 95.0,
+            "duration": 2.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>1,1, 0)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "SCALE_Y",
+            "anchor": "MODULE_TOP",
+            "ease": "INVERTED",
+            "amount": 5.0,
+            "duration": 4.0,
+            "delay": 3.0,
+            "formula": "$if(ni(count)>1,1, 0)$"
+          }
+        ],
+        "position_offset_y": -34.0,
+        "internal_title": "Uklck.Elements.Sect.Notifications.R2.Content",
+        "internal_toggles": {
+          "config_visible": 0,
+          "position_offset_y": 0
+        },
+        "internal_formulas": {
+          "config_visible": "$if(ni(count)>1, ALWAYS, NEVER)$",
+          "position_offset_y": "$314-gv(offset)$"
+        },
+        "viewgroup_items": [
+          {
+            "internal_type": "ShapeModule",
+            "shape_type": "RECT",
+            "shape_width": 664.0,
+            "shape_height": 58.0,
+            "shape_corners": 12.0,
+            "paint_color": "#FF464646",
+            "paint_mode": "SRC",
+            "internal_toggles": {
+              "position_offset_y": 0,
+              "paint_color": 100
+            },
+            "internal_formulas": {
+              "position_offset_y": "$if(ni(count)>1, 287-gv(offset), 99999)$",
+              "paint_color": ""
+            },
+            "internal_title": "Shape",
+            "internal_globals": {
+              "paint_color": "gbctrls/sysmonet/mnbeta2"
+            },
+            "position_anchor": "TOP"
+          },
+          {
+            "internal_type": "ShapeModule",
+            "shape_type": "RECT",
+            "shape_width": 664.0,
+            "shape_height": 154.0,
+            "shape_corners": 50.0,
+            "paint_color": "#FF464646",
+            "paint_mode": "SRC",
+            "internal_toggles": {
+              "paint_color": 100
+            },
+            "internal_formulas": {
+              "paint_color": ""
+            },
+            "internal_globals": {
+              "paint_color": "gbctrls/sysmonet/mnbeta2"
+            }
+          },
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$if(bp(vibrant, ni(1, bicon))=\"\",#FF7EB8C7,bp(vibrant, ni(1, bicon)))$"
+            },
+            "shape_type": "CIRCLE",
+            "shape_width": 54.0,
+            "position_anchor": "CENTERLEFT",
+            "position_padding_left": 32.0
+          },
+          {
+            "internal_type": "BitmapModule",
+            "internal_toggles": {
+              "bitmap_bitmap": 10,
+              "bitmap_filter_color": 100
+            },
+            "internal_formulas": {
+              "bitmap_bitmap": "$ni(1, icon)$",
+              "bitmap_filter_color": ""
+            },
+            "position_padding_left": 44.0,
+            "position_anchor": "CENTERLEFT",
+            "bitmap_width": 30.0,
+            "bitmap_filter": "COLORIZE",
+            "internal_globals": {
+              "bitmap_filter_color": "gbctrls/sysmonet/mnbeta2"
+            },
+            "bitmap_filter_color": "#CD000000"
+          },
+          {
+            "internal_type": "TextModule",
+            "position_padding_right": 40.0,
+            "position_anchor": "CENTERRIGHT",
+            "text_expression": "$ni(1, title)$",
+            "text_size_type": "FIXED_WIDTH",
+            "text_size": 26.0,
+            "text_width": 497.0,
+            "text_lines": 1.0,
+            "text_family": "kfile://org.kustom.provider/fonts/Roboto-Medium.ttf",
+            "internal_toggles": {
+              "paint_color": 100
+            },
+            "internal_formulas": {
+              "paint_color": ""
+            },
+            "internal_globals": {
+              "paint_color": "gbctrls/sysmonet/mnbeta3"
+            },
+            "position_padding_bottom": 40.0
+          },
+          {
+            "internal_type": "TextModule",
+            "position_padding_right": 40.0,
+            "position_padding_top": 50.0,
+            "position_anchor": "CENTERRIGHT",
+            "text_expression": "$ni(1, text)$",
+            "text_size_type": "FIXED_WIDTH",
+            "text_size": 22.0,
+            "text_width": 497.0,
+            "text_lines": 1.0,
+            "internal_toggles": {
+              "paint_color": 100
+            },
+            "internal_formulas": {
+              "paint_color": ""
+            },
+            "internal_globals": {
+              "paint_color": "gbctrls/sysmonet/mnbeta4"
+            }
+          },
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_globals": {
+              "paint_color": "controls"
+            },
+            "position_padding_right": 25.0,
+            "position_anchor": "CENTERRIGHT",
+            "shape_type": "CIRCLE",
+            "shape_width": 45.0,
+            "internal_formulas": {
+              "paint_color": "$if(si(darkmode) ~= \"1\", \"#20FFFFFF\", #10000000)$"
+            },
+            "internal_events": [
+              {
+                "type": "SINGLE_TAP",
+                "action": "KUSTOM_ACTION",
+                "kustom_action": "NOTIF_OPEN",
+                "notification": "1"
+              }
+            ]
+          },
+          {
+            "internal_type": "FontIconModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$if(si(darkmode) ~= \"1\", \"#C0FFFFFF\", #C0000000)$"
+            },
+            "position_padding_right": 30.0,
+            "position_anchor": "CENTERRIGHT",
+            "icon_size": 34.0,
+            "icon_set": "kfile://org.kustom.provider/icons/material.ttf",
+            "icon_icon": "expand_more"
+          }
+        ]
+      },
+      {
+        "internal_type": "OverlapLayerModule",
+        "position_offset_y": 136.0,
+        "internal_animations": [
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 150.0
+          },
+          {
+            "type": "FORMULA",
+            "speed": 35.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "SCALE_Y",
+            "anchor": "MODULE_TOP",
+            "speed": 55.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "delay": 0.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE_INVERTED",
+            "duration": 2.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>2,1, 0)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 1.0,
+            "trigger": "settings/confphnc",
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "action": "FADE",
+            "rule": "UP_TO_CENTER",
+            "speed": 400.0
+          },
+          {
+            "type": "FORMULA",
+            "speed": 5.0,
+            "angle": 90.0,
+            "duration": 4.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "SCALE_Y",
+            "duration": 2.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>2,1, 0)$",
+            "ease": "INVERTED",
+            "amount": 95.0,
+            "anchor": "MODULE_TOP"
+          },
+          {
+            "type": "FORMULA",
+            "action": "SCALE_Y",
+            "ease": "INVERTED",
+            "amount": 5.0,
+            "duration": 4.0,
+            "delay": 3.0,
+            "formula": "$if(ni(count)>2,1, 0)$",
+            "anchor": "MODULE_TOP"
+          }
+        ],
+        "internal_toggles": {
+          "config_visible": 0,
+          "position_offset_y": 0
+        },
+        "internal_formulas": {
+          "config_visible": "$if(ni(count)>2, ALWAYS, NEVER)$",
+          "position_offset_y": "$476-gv(offset)$"
+        },
+        "internal_title": "Uklck.Elements.Sect.Notifications.R3.Content",
+        "viewgroup_items": [
+          {
+            "internal_type": "ShapeModule",
+            "shape_type": "RECT",
+            "shape_width": 664.0,
+            "shape_height": 58.0,
+            "shape_corners": 12.0,
+            "paint_color": "#FF464646",
+            "paint_mode": "SRC",
+            "internal_toggles": {
+              "position_offset_y": 0,
+              "paint_color": 100
+            },
+            "internal_formulas": {
+              "position_offset_y": "$if(ni(count)>2, 448-gv(offset), 99999)$",
+              "paint_color": ""
+            },
+            "internal_title": "Shape",
+            "internal_globals": {
+              "paint_color": "gbctrls/sysmonet/mnbeta2"
+            },
+            "position_anchor": "TOP"
+          },
+          {
+            "internal_type": "ShapeModule",
+            "shape_type": "RECT",
+            "shape_width": 664.0,
+            "shape_height": 154.0,
+            "shape_corners": 50.0,
+            "paint_color": "#FF464646",
+            "paint_mode": "SRC",
+            "internal_toggles": {
+              "paint_color": 100
+            },
+            "internal_formulas": {
+              "paint_color": ""
+            },
+            "internal_globals": {
+              "paint_color": "gbctrls/sysmonet/mnbeta2"
+            }
+          },
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$if(bp(vibrant, ni(2, bicon))=\"\",#FF7EB8C7,bp(vibrant, ni(2, bicon)))$"
+            },
+            "shape_type": "CIRCLE",
+            "shape_width": 54.0,
+            "position_anchor": "CENTERLEFT",
+            "position_padding_left": 32.0
+          },
+          {
+            "internal_type": "BitmapModule",
+            "internal_toggles": {
+              "bitmap_bitmap": 10,
+              "bitmap_filter_color": 100
+            },
+            "internal_formulas": {
+              "bitmap_bitmap": "$ni(2, icon)$",
+              "bitmap_filter_color": ""
+            },
+            "position_padding_left": 44.0,
+            "position_anchor": "CENTERLEFT",
+            "bitmap_width": 30.0,
+            "bitmap_filter": "COLORIZE",
+            "internal_globals": {
+              "bitmap_filter_color": "gbctrls/sysmonet/mnbeta2"
+            },
+            "bitmap_filter_color": "#CD000000"
+          },
+          {
+            "internal_type": "TextModule",
+            "position_padding_right": 40.0,
+            "position_anchor": "CENTERRIGHT",
+            "text_expression": "$ni(2, title)$",
+            "text_size_type": "FIXED_WIDTH",
+            "text_size": 26.0,
+            "text_width": 497.0,
+            "text_lines": 1.0,
+            "text_family": "kfile://org.kustom.provider/fonts/Roboto-Medium.ttf",
+            "internal_toggles": {
+              "paint_color": 100
+            },
+            "internal_formulas": {
+              "paint_color": ""
+            },
+            "internal_globals": {
+              "paint_color": "gbctrls/sysmonet/mnbeta3"
+            },
+            "position_padding_bottom": 40.0
+          },
+          {
+            "internal_type": "TextModule",
+            "position_padding_right": 40.0,
+            "position_padding_top": 50.0,
+            "position_anchor": "CENTERRIGHT",
+            "text_expression": "$ni(2, text)$",
+            "text_size_type": "FIXED_WIDTH",
+            "text_size": 22.0,
+            "text_width": 497.0,
+            "text_lines": 1.0,
+            "internal_toggles": {
+              "paint_color": 100
+            },
+            "internal_formulas": {
+              "paint_color": ""
+            },
+            "internal_globals": {
+              "paint_color": "gbctrls/sysmonet/mnbeta4"
+            }
+          },
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_globals": {
+              "paint_color": "controls"
+            },
+            "position_padding_right": 25.0,
+            "position_anchor": "CENTERRIGHT",
+            "shape_type": "CIRCLE",
+            "shape_width": 45.0,
+            "internal_formulas": {
+              "paint_color": "$if(si(darkmode) ~= \"1\", \"#20FFFFFF\", #10000000)$"
+            },
+            "internal_events": [
+              {
+                "type": "SINGLE_TAP",
+                "action": "KUSTOM_ACTION",
+                "kustom_action": "NOTIF_OPEN",
+                "notification": "2"
+              }
+            ]
+          },
+          {
+            "internal_type": "FontIconModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$if(si(darkmode) ~= \"1\", \"#C0FFFFFF\", #C0000000)$"
+            },
+            "position_padding_right": 30.0,
+            "position_anchor": "CENTERRIGHT",
+            "icon_size": 34.0,
+            "icon_set": "kfile://org.kustom.provider/icons/material.ttf",
+            "icon_icon": "expand_more"
+          }
+        ]
+      },
+      {
+        "internal_type": "OverlapLayerModule",
+        "position_offset_y": 249.0,
+        "internal_toggles": {
+          "config_visible": 0,
+          "position_offset_y": 0
+        },
+        "internal_formulas": {
+          "config_visible": "$if(ni(count)>3, ALWAYS, NEVER)$",
+          "position_offset_y": "$597-gv(offset)$"
+        },
+        "internal_events": [
+          {
+            "type": "SINGLE_TAP",
+            "action": "KUSTOM_ACTION",
+            "kustom_action": "NOTIF_OPEN",
+            "notification": "3"
+          }
+        ],
+        "internal_animations": [
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 150.0
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE_INVERTED",
+            "duration": 2.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>3,1, 0)$"
+          },
+          {
+            "type": "FORMULA",
+            "speed": 5.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "limit": 164.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 1.0,
+            "trigger": "settings/confphnc",
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          },
+          {
+            "type": "SCROLL_Y",
+            "action": "FADE",
+            "rule": "UP_TO_CENTER",
+            "speed": 400.0
+          },
+          {
+            "type": "FORMULA",
+            "speed": 3.0,
+            "angle": 90.0,
+            "duration": 4.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "SCALE_Y",
+            "anchor": "MODULE_TOP",
+            "ease": "INVERTED",
+            "amount": 95.0,
+            "duration": 2.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>3,1, 0)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "SCALE_Y",
+            "anchor": "MODULE_TOP",
+            "ease": "INVERTED",
+            "amount": 5.0,
+            "duration": 4.0,
+            "delay": 3.0,
+            "formula": "$if(ni(count)>3,1, 0)$"
+          }
+        ],
+        "internal_title": "Uklck.Elements.Sect.Notifications.R4.Base",
+        "viewgroup_items": [
+          {
+            "internal_type": "ShapeModule",
+            "shape_type": "RECT",
+            "shape_width": 664.0,
+            "shape_height": 84.0,
+            "shape_corners": 360,
+            "paint_color": "#FF464646",
+            "position_padding_top": 20.0,
+            "paint_mode": "SRC",
+            "internal_toggles": {
+              "paint_color": 100
+            },
+            "internal_formulas": {
+              "paint_color": ""
+            },
+            "internal_globals": {
+              "paint_color": "gbctrls/sysmonet/mnbeta2"
+            }
+          },
+          {
+            "internal_type": "StackLayerModule",
+            "position_padding_left": 30.0,
+            "position_padding_top": 20.0,
+            "position_anchor": "CENTERLEFT",
+            "config_stacking": "HORIZONTAL_CENTER",
+            "config_margin": 20.0,
+            "internal_toggles": {
+              "position_padding_left": 10
+            },
+            "internal_formulas": {
+              "position_padding_left": "$if(mi(state) ~= \"STOPPED\", \"30\", 80)$"
+            },
+            "viewgroup_items": [
+              {
+                "internal_type": "BitmapModule",
+                "internal_toggles": {
+                  "bitmap_bitmap": 10,
+                  "bitmap_filter_color": 100
+                },
+                "internal_formulas": {
+                  "bitmap_bitmap": "$ni(3, icon)$",
+                  "bitmap_filter_color": ""
+                },
+                "bitmap_width": 28.0,
+                "bitmap_filter": "COLORIZE",
+                "internal_globals": {
+                  "bitmap_filter_color": "gbctrls/sysmonet/mnbeta3"
+                }
+              },
+              {
+                "internal_type": "BitmapModule",
+                "internal_toggles": {
+                  "bitmap_bitmap": 10,
+                  "bitmap_alpha": 10,
+                  "bitmap_filter_color": 100
+                },
+                "internal_formulas": {
+                  "bitmap_bitmap": "$ni(4, icon)$",
+                  "bitmap_alpha": "$if(ni(count)>4, 100,0)$",
+                  "bitmap_filter_color": ""
+                },
+                "bitmap_width": 28.0,
+                "bitmap_filter": "COLORIZE",
+                "internal_globals": {
+                  "bitmap_filter_color": "gbctrls/sysmonet/mnbeta3"
+                }
+              },
+              {
+                "internal_type": "BitmapModule",
+                "internal_toggles": {
+                  "bitmap_bitmap": 10,
+                  "bitmap_alpha": 10,
+                  "bitmap_filter_color": 100
+                },
+                "internal_formulas": {
+                  "bitmap_bitmap": "$ni(5, icon)$",
+                  "bitmap_alpha": "$if(ni(count)>5, 100,0)$",
+                  "bitmap_filter_color": ""
+                },
+                "bitmap_width": 28.0,
+                "bitmap_filter": "COLORIZE",
+                "internal_globals": {
+                  "bitmap_filter_color": "gbctrls/sysmonet/mnbeta3"
+                }
+              },
+              {
+                "internal_type": "BitmapModule",
+                "internal_toggles": {
+                  "bitmap_bitmap": 10,
+                  "bitmap_alpha": 10,
+                  "bitmap_filter_color": 100
+                },
+                "internal_formulas": {
+                  "bitmap_bitmap": "$ni(6, icon)$",
+                  "bitmap_alpha": "$if(ni(count)>5, 100,0)$",
+                  "bitmap_filter_color": ""
+                },
+                "bitmap_width": 28.0,
+                "bitmap_filter": "COLORIZE",
+                "internal_globals": {
+                  "bitmap_filter_color": "gbctrls/sysmonet/mnbeta3"
+                }
+              },
+              {
+                "internal_type": "BitmapModule",
+                "internal_toggles": {
+                  "bitmap_bitmap": 10,
+                  "bitmap_alpha": 10,
+                  "bitmap_filter_color": 100
+                },
+                "internal_formulas": {
+                  "bitmap_bitmap": "$ni(7, icon)$",
+                  "bitmap_alpha": "$if(ni(count)>5, 100,0)$",
+                  "bitmap_filter_color": ""
+                },
+                "bitmap_width": 28.0,
+                "bitmap_filter": "COLORIZE",
+                "internal_globals": {
+                  "bitmap_filter_color": "gbctrls/sysmonet/mnbeta3"
+                }
+              },
+              {
+                "internal_type": "BitmapModule",
+                "internal_toggles": {
+                  "bitmap_bitmap": 10,
+                  "bitmap_alpha": 10,
+                  "bitmap_filter_color": 100
+                },
+                "internal_formulas": {
+                  "bitmap_bitmap": "$ni(7, icon)$",
+                  "bitmap_alpha": "$if(ni(count)>5, 100,0)$",
+                  "bitmap_filter_color": ""
+                },
+                "bitmap_width": 28.0,
+                "bitmap_filter": "COLORIZE",
+                "internal_globals": {
+                  "bitmap_filter_color": "gbctrls/sysmonet/mnbeta3"
+                }
+              },
+              {
+                "internal_type": "BitmapModule",
+                "internal_toggles": {
+                  "bitmap_bitmap": 10,
+                  "bitmap_alpha": 10,
+                  "bitmap_filter_color": 100
+                },
+                "internal_formulas": {
+                  "bitmap_bitmap": "$ni(8, icon)$",
+                  "bitmap_alpha": "$if(ni(count)>5, 100,0)$",
+                  "bitmap_filter_color": ""
+                },
+                "bitmap_width": 28.0,
+                "bitmap_filter": "COLORIZE",
+                "internal_globals": {
+                  "bitmap_filter_color": "gbctrls/sysmonet/mnbeta3"
+                }
+              },
+              {
+                "internal_type": "BitmapModule",
+                "internal_toggles": {
+                  "bitmap_bitmap": 10,
+                  "bitmap_alpha": 10,
+                  "bitmap_filter_color": 100
+                },
+                "internal_formulas": {
+                  "bitmap_bitmap": "$ni(9, icon)$",
+                  "bitmap_alpha": "$if(ni(count)>5, 100,0)$",
+                  "bitmap_filter_color": ""
+                },
+                "bitmap_width": 28.0,
+                "bitmap_filter": "COLORIZE",
+                "internal_globals": {
+                  "bitmap_filter_color": "gbctrls/sysmonet/mnbeta3"
+                }
+              },
+              {
+                "internal_type": "BitmapModule",
+                "internal_toggles": {
+                  "bitmap_bitmap": 10,
+                  "bitmap_alpha": 10,
+                  "bitmap_filter_color": 100
+                },
+                "internal_formulas": {
+                  "bitmap_bitmap": "$ni(10, icon)$",
+                  "bitmap_alpha": "$if(ni(count)>5, 100,0)$",
+                  "bitmap_filter_color": ""
+                },
+                "bitmap_width": 28.0,
+                "bitmap_filter": "COLORIZE",
+                "internal_globals": {
+                  "bitmap_filter_color": "gbctrls/sysmonet/mnbeta3"
+                }
+              },
+              {
+                "internal_type": "BitmapModule",
+                "internal_toggles": {
+                  "bitmap_bitmap": 10,
+                  "bitmap_alpha": 10,
+                  "bitmap_filter_color": 100
+                },
+                "internal_formulas": {
+                  "bitmap_bitmap": "$ni(11, icon)$",
+                  "bitmap_alpha": "$if(ni(count)>5, 100,0)$",
+                  "bitmap_filter_color": ""
+                },
+                "bitmap_width": 28.0,
+                "bitmap_filter": "COLORIZE",
+                "internal_globals": {
+                  "bitmap_filter_color": "gbctrls/sysmonet/mnbeta3"
+                }
+              },
+              {
+                "internal_type": "BitmapModule",
+                "internal_toggles": {
+                  "bitmap_bitmap": 10,
+                  "bitmap_alpha": 10,
+                  "bitmap_filter_color": 100
+                },
+                "internal_formulas": {
+                  "bitmap_bitmap": "$ni(12, icon)$",
+                  "bitmap_alpha": "$if(ni(count)>5, 100,0)$",
+                  "bitmap_filter_color": ""
+                },
+                "bitmap_width": 28.0,
+                "bitmap_filter": "COLORIZE",
+                "internal_globals": {
+                  "bitmap_filter_color": "gbctrls/sysmonet/mnbeta3"
+                }
+              },
+              {
+                "internal_type": "BitmapModule",
+                "internal_toggles": {
+                  "bitmap_bitmap": 10,
+                  "bitmap_alpha": 10,
+                  "bitmap_filter_color": 100,
+                  "bitmap_width": 10
+                },
+                "internal_formulas": {
+                  "bitmap_bitmap": "$ni(13, icon)$",
+                  "bitmap_alpha": "$if(ni(count)>5, 100,0)$",
+                  "bitmap_filter_color": "",
+                  "bitmap_width": "$if(mi(state) ~= \"STOPPED\", \"28\", 0)$"
+                },
+                "bitmap_width": 28.0,
+                "bitmap_filter": "COLORIZE",
+                "internal_globals": {
+                  "bitmap_filter_color": "gbctrls/sysmonet/mnbeta3"
+                }
+              },
+              {
+                "internal_type": "FontIconModule",
+                "internal_toggles": {
+                  "paint_color": 10
+                },
+                "internal_formulas": {
+                  "paint_color": "$if(ni(count)>14,if(si(darkmode) ~= \"1\", \"#FFFFFFFF\", #C0000000), #00000000)$"
+                },
+                "icon_set": "kfile://org.kustom.provider/icons/entypo.ttf",
+                "icon_icon": "dot-single",
+                "icon_size": 28.0
+              }
+            ]
+          },
+          {
+            "internal_type": "BitmapModule",
+            "internal_toggles": {
+              "bitmap_bitmap": 10,
+              "bitmap_filter_color": 100,
+              "bitmap_alpha": 10
+            },
+            "internal_formulas": {
+              "bitmap_bitmap": "$ni(2, icon)$",
+              "bitmap_filter_color": "",
+              "bitmap_alpha": "$if(mi(state) ~= \"STOPPED\", \"0\", 100)$"
+            },
+            "bitmap_width": 28.0,
+            "bitmap_filter": "COLORIZE",
+            "internal_globals": {
+              "bitmap_filter_color": "gbctrls/sysmonet/mnbeta3"
+            },
+            "position_anchor": "CENTERLEFT",
+            "position_padding_left": 32.0,
+            "position_padding_top": 20.0
+          }
+        ]
+      },
+      {
+        "internal_type": "ShapeModule",
+        "shape_type": "RECT",
+        "shape_width": 655.0,
+        "shape_height": 92.0,
+        "shape_corners": 53,
+        "paint_color": "#FF464646",
+        "paint_mode": "SRC",
+        "position_offset_y": -224.0,
+        "internal_title": "Uklck.Elements.Sect.Notifications.R1-PV.BckgrndBase",
+        "internal_toggles": {
+          "position_offset_x": 0,
+          "position_offset_y": 0,
+          "paint_color": 10
+        },
+        "internal_formulas": {
+          "position_offset_x": "$if(ni(count)>1, 0, 99999)$",
+          "position_offset_y": "$140-gv(offset)$",
+          "paint_color": "$ce(ce(si(wpcolor2), sat, 5), ce(si(wpcolor2), contrast), 100)$"
+        },
+        "internal_animations": [
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 150.0
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 2.0,
+            "trigger": "alwayson"
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "trigger": "settings/confphnc",
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "speed": 6.0,
+            "amount": 15.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "trigger": "alwayson"
+          },
+          {
+            "type": "FORMULA",
+            "speed": 45.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          }
+        ]
+      },
+      {
+        "internal_type": "ShapeModule",
+        "shape_type": "RECT",
+        "shape_width": 655.0,
+        "shape_height": 58.0,
+        "shape_corners": 11.0,
+        "paint_color": "#FF464646",
+        "position_padding_top": 90.0,
+        "paint_mode": "SRC",
+        "position_offset_y": -251.0,
+        "internal_title": "Uklck.Elements.Sect.Notifications.R1-PV.BckgrndUni",
+        "internal_toggles": {
+          "position_offset_x": 0,
+          "position_offset_y": 0,
+          "paint_color": 10
+        },
+        "internal_formulas": {
+          "position_offset_x": "$if(ni(count)>1, 0, 99999)$",
+          "position_offset_y": "$149-gv(offset)$",
+          "paint_color": "$ce(ce(si(wpcolor2), sat, 5), ce(si(wpcolor2), contrast), 100)$"
+        },
+        "internal_animations": [
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 150.0
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 2.0,
+            "trigger": "alwayson"
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>1,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "trigger": "settings/confphnc",
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "speed": 6.0,
+            "amount": 15.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "trigger": "alwayson"
+          },
+          {
+            "type": "FORMULA",
+            "speed": 45.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          }
+        ]
+      },
+      {
+        "internal_type": "OverlapLayerModule",
+        "internal_title": "Uklck.Elements.Sect.Notifications.R1-PV.Content",
+        "internal_animations": [
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 150.0
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 2.0,
+            "trigger": "alwayson"
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "trigger": "settings/confphnc",
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "speed": 6.0,
+            "amount": 15.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "trigger": "alwayson"
+          },
+          {
+            "type": "FORMULA",
+            "speed": 45.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          }
+        ],
+        "position_offset_y": -222.0,
+        "internal_toggles": {
+          "config_visible": 0,
+          "position_offset_y": 0
+        },
+        "internal_formulas": {
+          "config_visible": "$if(ni(count)>0, ALWAYS, NEVER)$",
+          "position_offset_y": "$148-gv(offset)$"
+        },
+        "viewgroup_items": [
+          {
+            "internal_type": "ShapeModule",
+            "shape_type": "RECT",
+            "shape_width": 655.0,
+            "shape_height": 80.0,
+            "shape_corners": 53,
+            "paint_color": "#FF464646",
+            "paint_mode": "SRC",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(ce(si(wpcolor2), sat, 5), ce(si(wpcolor2), contrast), 100)$"
+            }
+          },
+          {
+            "internal_type": "BitmapModule",
+            "internal_toggles": {
+              "bitmap_bitmap": 10,
+              "bitmap_filter_color": 10
+            },
+            "internal_formulas": {
+              "bitmap_bitmap": "$ni(0, icon)$",
+              "bitmap_filter_color": "$ce(si(wpcolor2), contrast)$"
+            },
+            "position_padding_left": 30.0,
+            "position_anchor": "CENTERLEFT",
+            "bitmap_width": 35.0,
+            "bitmap_filter": "COLORIZE"
+          },
+          {
+            "internal_type": "TextModule",
+            "position_padding_left": 86.0,
+            "position_anchor": "CENTERLEFT",
+            "text_expression": "$ni(0, app)$ • $tf(ni(0, time))$",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(si(wpcolor2), contrast)$"
+            }
+          },
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_globals": {
+              "paint_color": "controls"
+            },
+            "position_padding_right": 25.0,
+            "position_anchor": "CENTERRIGHT",
+            "shape_type": "CIRCLE",
+            "shape_width": 45.0,
+            "internal_formulas": {
+              "paint_color": "$ce(ce(si(wpcolor2), sat, 10), ce(si(wpcolor2), contrast), 90)$"
+            },
+            "internal_events": [
+              {
+                "type": "SINGLE_TAP",
+                "action": "KUSTOM_ACTION",
+                "kustom_action": "NOTIF_OPEN",
+                "notification": "0"
+              }
+            ]
+          },
+          {
+            "internal_type": "FontIconModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(si(wpcolor2), contrast)$"
+            },
+            "position_padding_right": 30.0,
+            "position_anchor": "CENTERRIGHT",
+            "icon_size": 34.0,
+            "icon_set": "kfile://org.kustom.provider/icons/material.ttf",
+            "icon_icon": "expand_more"
+          }
+        ]
+      },
+      {
+        "internal_type": "ShapeModule",
+        "shape_type": "RECT",
+        "shape_width": 655.0,
+        "shape_height": 58.0,
+        "shape_corners": 11,
+        "paint_color": "#FF464646",
+        "paint_mode": "SRC",
+        "position_offset_y": -143.0,
+        "internal_toggles": {
+          "position_offset_y": 0,
+          "paint_color": 10
+        },
+        "internal_formulas": {
+          "position_offset_y": "$if(ni(count)>1, 287-gv(offset), 99999)$",
+          "paint_color": "$ce(ce(si(wpcolor2), sat, 5), ce(si(wpcolor2), contrast), 100)$"
+        },
+        "internal_animations": [
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 150.0
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 2.0,
+            "trigger": "alwayson"
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>1,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "trigger": "settings/confphnc",
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "speed": 6.0,
+            "amount": 15.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "trigger": "alwayson"
+          },
+          {
+            "type": "FORMULA",
+            "speed": 45.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          }
+        ],
+        "internal_title": "Uklck.Elements.Sect.Notifications.R2-PV.BckgrndBase"
+      },
+      {
+        "internal_type": "ShapeModule",
+        "shape_type": "RECT",
+        "shape_width": 655.0,
+        "shape_height": 80.0,
+        "shape_corners": 11,
+        "paint_color": "#FF464646",
+        "paint_mode": "SRC",
+        "position_offset_y": -120.0,
+        "internal_toggles": {
+          "position_offset_y": 0,
+          "shape_corners": 10,
+          "paint_color": 10
+        },
+        "internal_formulas": {
+          "position_offset_y": "$if(ni(count)>1, 326-gv(offset), 99999)$",
+          "shape_corners": "$if(ni(count)=2, 53,11)$",
+          "paint_color": "$ce(ce(si(wpcolor2), sat, 5), ce(si(wpcolor2), contrast), 100)$"
+        },
+        "internal_animations": [
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 150.0
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 2.0,
+            "trigger": "alwayson"
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>2,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "trigger": "settings/confphnc",
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "speed": 6.0,
+            "amount": 15.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "trigger": "alwayson"
+          },
+          {
+            "type": "FORMULA",
+            "speed": 45.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          }
+        ],
+        "internal_title": "Uklck.Elements.Sect.Notifications.R2-PV.BckgrndUni"
+      },
+      {
+        "internal_type": "ShapeModule",
+        "shape_type": "RECT",
+        "shape_width": 655.0,
+        "shape_height": 80.0,
+        "shape_corners": 53.0,
+        "paint_color": "#FF464646",
+        "paint_mode": "SRC",
+        "position_offset_y": -24.0,
+        "internal_toggles": {
+          "shape_corners": 10,
+          "position_offset_y": 0,
+          "paint_color": 10
+        },
+        "internal_formulas": {
+          "shape_corners": "$if(ni(count)=3, 53,11)$",
+          "position_offset_y": "$if(ni(count)>2, 488-gv(offset), 99999)$",
+          "paint_color": "$ce(ce(si(wpcolor2), sat, 5), ce(si(wpcolor2), contrast), 100)$"
+        },
+        "internal_animations": [
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 2.0,
+            "trigger": "alwayson"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 150.0
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>3,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "trigger": "settings/confphnc",
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "speed": 6.0,
+            "amount": 15.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "trigger": "alwayson"
+          },
+          {
+            "type": "FORMULA",
+            "speed": 45.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          }
+        ],
+        "internal_title": "Uklck.Elements.Sect.Notifications.R3-PV.BckgrndUni"
+      },
+      {
+        "internal_type": "OverlapLayerModule",
+        "position_padding_top": 25.0,
+        "internal_animations": [
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 150.0
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 2.0,
+            "trigger": "alwayson"
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>1,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "trigger": "settings/confphnc",
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "speed": 6.0,
+            "amount": 15.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "trigger": "alwayson"
+          },
+          {
+            "type": "FORMULA",
+            "speed": 45.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          }
+        ],
+        "position_offset_y": -138.0,
+        "internal_title": "Uklck.Elements.Sect.Notifications.R2-PV.Content",
+        "internal_toggles": {
+          "config_visible": 0,
+          "position_offset_y": 0
+        },
+        "internal_formulas": {
+          "config_visible": "$if(ni(count)>1, ALWAYS, NEVER)$",
+          "position_offset_y": "$314-gv(offset)$"
+        },
+        "viewgroup_items": [
+          {
+            "internal_type": "ShapeModule",
+            "shape_type": "RECT",
+            "shape_width": 655.0,
+            "shape_height": 80.0,
+            "shape_corners": 53.0,
+            "paint_color": "#FF464646",
+            "paint_mode": "SRC",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(ce(si(wpcolor2), sat, 5), ce(si(wpcolor2), contrast), 100)$"
+            }
+          },
+          {
+            "internal_type": "BitmapModule",
+            "internal_toggles": {
+              "bitmap_bitmap": 10,
+              "bitmap_filter_color": 10
+            },
+            "internal_formulas": {
+              "bitmap_bitmap": "$ni(1, icon)$",
+              "bitmap_filter_color": "$ce(si(wpcolor2), contrast)$"
+            },
+            "position_padding_left": 30.0,
+            "position_anchor": "CENTERLEFT",
+            "bitmap_width": 35.0,
+            "bitmap_filter": "COLORIZE"
+          },
+          {
+            "internal_type": "TextModule",
+            "position_padding_left": 86.0,
+            "position_anchor": "CENTERLEFT",
+            "text_expression": "$ni(1, app)$ • $tf(ni(1, time))$",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(si(wpcolor2), contrast)$"
+            }
+          },
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_globals": {
+              "paint_color": "controls"
+            },
+            "position_padding_right": 25.0,
+            "position_anchor": "CENTERRIGHT",
+            "shape_type": "CIRCLE",
+            "shape_width": 45.0,
+            "internal_formulas": {
+              "paint_color": "$ce(ce(si(wpcolor2), sat, 10), ce(si(wpcolor2), contrast), 90)$"
+            },
+            "internal_events": [
+              {
+                "type": "SINGLE_TAP",
+                "action": "KUSTOM_ACTION",
+                "kustom_action": "NOTIF_OPEN",
+                "notification": "0"
+              }
+            ]
+          },
+          {
+            "internal_type": "FontIconModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(si(wpcolor2), contrast)$"
+            },
+            "position_padding_right": 30.0,
+            "position_anchor": "CENTERRIGHT",
+            "icon_size": 34.0,
+            "icon_set": "kfile://org.kustom.provider/icons/material.ttf",
+            "icon_icon": "expand_more"
+          }
+        ]
+      },
+      {
+        "internal_type": "ShapeModule",
+        "shape_type": "RECT",
+        "shape_width": 655.0,
+        "shape_height": 58.0,
+        "shape_corners": 11,
+        "paint_color": "#FF464646",
+        "paint_mode": "SRC",
+        "position_offset_y": -46.0,
+        "internal_toggles": {
+          "position_offset_y": 0,
+          "paint_color": 10
+        },
+        "internal_formulas": {
+          "position_offset_y": "$if(ni(count)>2, 448-gv(offset), 99999)$",
+          "paint_color": "$ce(ce(si(wpcolor2), sat, 5), ce(si(wpcolor2), contrast), 100)$"
+        },
+        "internal_animations": [
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 150.0
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 2.0,
+            "trigger": "alwayson"
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>2,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "trigger": "settings/confphnc",
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "speed": 6.0,
+            "amount": 15.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "trigger": "alwayson"
+          },
+          {
+            "type": "FORMULA",
+            "speed": 45.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          }
+        ],
+        "internal_title": "Uklck.Elements.Sect.Notifications.R3-PV.BckgrndBase"
+      },
+      {
+        "internal_type": "OverlapLayerModule",
+        "position_padding_top": 25.0,
+        "position_offset_y": -40.0,
+        "internal_animations": [
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 150.0
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 2.0,
+            "trigger": "alwayson"
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>2,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "trigger": "settings/confphnc",
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "speed": 6.0,
+            "amount": 15.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "trigger": "alwayson"
+          },
+          {
+            "type": "FORMULA",
+            "speed": 45.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          }
+        ],
+        "internal_toggles": {
+          "config_visible": 0,
+          "position_offset_y": 0
+        },
+        "internal_formulas": {
+          "config_visible": "$if(ni(count)>2, ALWAYS, NEVER)$",
+          "position_offset_y": "$476-gv(offset)$"
+        },
+        "internal_title": "Uklck.Elements.Sect.Notifications.R3-PV.Content",
+        "viewgroup_items": [
+          {
+            "internal_type": "ShapeModule",
+            "shape_type": "RECT",
+            "shape_width": 655.0,
+            "shape_height": 80.0,
+            "shape_corners": 53.0,
+            "paint_color": "#FF464646",
+            "paint_mode": "SRC",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(ce(si(wpcolor2), sat, 5), ce(si(wpcolor2), contrast), 100)$"
+            }
+          },
+          {
+            "internal_type": "BitmapModule",
+            "internal_toggles": {
+              "bitmap_bitmap": 10,
+              "bitmap_filter_color": 10
+            },
+            "internal_formulas": {
+              "bitmap_bitmap": "$ni(2, icon)$",
+              "bitmap_filter_color": "$ce(si(wpcolor2), contrast)$"
+            },
+            "position_padding_left": 30.0,
+            "position_anchor": "CENTERLEFT",
+            "bitmap_width": 35.0,
+            "bitmap_filter": "COLORIZE"
+          },
+          {
+            "internal_type": "TextModule",
+            "position_padding_left": 86.0,
+            "position_anchor": "CENTERLEFT",
+            "text_expression": "$ni(2, app)$ • $tf(ni(2, time))$",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(si(wpcolor2), contrast)$"
+            }
+          },
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_globals": {
+              "paint_color": "controls"
+            },
+            "position_padding_right": 25.0,
+            "position_anchor": "CENTERRIGHT",
+            "shape_type": "CIRCLE",
+            "shape_width": 45.0,
+            "internal_formulas": {
+              "paint_color": "$ce(ce(si(wpcolor2), sat, 10), ce(si(wpcolor2), contrast), 90)$"
+            },
+            "internal_events": [
+              {
+                "type": "SINGLE_TAP",
+                "action": "KUSTOM_ACTION",
+                "kustom_action": "NOTIF_OPEN",
+                "notification": "0"
+              }
+            ]
+          },
+          {
+            "internal_type": "FontIconModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(si(wpcolor2), contrast)$"
+            },
+            "position_padding_right": 30.0,
+            "position_anchor": "CENTERRIGHT",
+            "icon_size": 34.0,
+            "icon_set": "kfile://org.kustom.provider/icons/material.ttf",
+            "icon_icon": "expand_more"
+          }
+        ]
+      },
+      {
+        "internal_type": "OverlapLayerModule",
+        "position_padding_top": 5.0,
+        "position_offset_y": 46.0,
+        "internal_toggles": {
+          "config_visible": 0,
+          "position_offset_y": 0
+        },
+        "internal_formulas": {
+          "config_visible": "$if(ni(count)>3, ALWAYS, NEVER)$",
+          "position_offset_y": "$597-gv(offset)$"
+        },
+        "internal_events": [
+          {
+            "type": "SINGLE_TAP",
+            "action": "KUSTOM_ACTION",
+            "kustom_action": "NOTIF_OPEN",
+            "notification": "3"
+          }
+        ],
+        "internal_animations": [
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 2.0,
+            "trigger": "alwayson"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 150.0
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>3,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "trigger": "settings/confphnc",
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "speed": 6.0,
+            "amount": 15.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "trigger": "alwayson"
+          },
+          {
+            "type": "FORMULA",
+            "speed": 45.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "formula": "$if(mi(state) ~= \"STOPPED\", \"0\", 1)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          }
+        ],
+        "internal_title": "Uklck.Elements.Sect.Notifications.R4-PV.Base",
+        "viewgroup_items": [
+          {
+            "internal_type": "ShapeModule",
+            "shape_type": "RECT",
+            "shape_width": 655.0,
+            "shape_height": 55.0,
+            "shape_corners": 11.0,
+            "paint_color": "#FF464646",
+            "paint_mode": "SRC",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(ce(si(wpcolor2), sat, 5), ce(si(wpcolor2), contrast), 100)$"
+            }
+          },
+          {
+            "internal_type": "ShapeModule",
+            "shape_type": "RECT",
+            "shape_width": 655.0,
+            "shape_height": 74.0,
+            "shape_corners": 360,
+            "paint_color": "#FF464646",
+            "position_padding_top": 21.0,
+            "paint_mode": "SRC",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(ce(si(wpcolor2), sat, 5), ce(si(wpcolor2), contrast), 100)$"
+            }
+          },
+          {
+            "internal_type": "StackLayerModule",
+            "position_padding_left": 25.0,
+            "position_padding_top": 20.0,
+            "position_anchor": "CENTERLEFT",
+            "config_stacking": "HORIZONTAL_CENTER",
+            "config_margin": 20.0,
+            "viewgroup_items": [
+              {
+                "internal_type": "BitmapModule",
+                "internal_toggles": {
+                  "bitmap_bitmap": 10,
+                  "bitmap_filter_color": 10
+                },
+                "internal_formulas": {
+                  "bitmap_bitmap": "$ni(3, icon)$",
+                  "bitmap_filter_color": "$ce(si(wpcolor2), contrast)$"
+                },
+                "bitmap_width": 35.0,
+                "bitmap_filter": "COLORIZE"
+              },
+              {
+                "internal_type": "BitmapModule",
+                "internal_toggles": {
+                  "bitmap_bitmap": 10,
+                  "bitmap_alpha": 10,
+                  "bitmap_filter_color": 10
+                },
+                "internal_formulas": {
+                  "bitmap_bitmap": "$ni(4, icon)$",
+                  "bitmap_alpha": "$if(ni(count)>4, 100,0)$",
+                  "bitmap_filter_color": "$ce(si(wpcolor2), contrast)$"
+                },
+                "bitmap_width": 35.0,
+                "bitmap_filter": "COLORIZE"
+              },
+              {
+                "internal_type": "BitmapModule",
+                "internal_toggles": {
+                  "bitmap_bitmap": 10,
+                  "bitmap_alpha": 10,
+                  "bitmap_filter_color": 10
+                },
+                "internal_formulas": {
+                  "bitmap_bitmap": "$ni(5, icon)$",
+                  "bitmap_alpha": "$if(ni(count)>5, 100,0)$",
+                  "bitmap_filter_color": "$ce(si(wpcolor2), contrast)$"
+                },
+                "bitmap_width": 35.0,
+                "bitmap_filter": "COLORIZE"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "internal_type": "KomponentModule",
+        "internal_title": "Uklck.Elements.MonetClock-Main",
+        "internal_author_email": "erik.bucik@gmail.com",
+        "internal_author_name": "Erik Bucik",
+        "globals_list": {
+          "hours": {
+            "index": 1,
+            "type": "FOLDER",
+            "title": "Hours"
+          },
+          "hours/string": {
+            "index": 2,
+            "type": "TEXT",
+            "title": "String",
+            "value": "$df(hh)$"
+          },
+          "hours/font": {
+            "index": 3,
+            "type": "FONT",
+            "title": "Font",
+            "value": "kfile://org.kustom.sdcard.000/fonts/Roboto-Light.ttf",
+            "toggles": 100,
+            "global": "settings/conffnts/clckfnts/lscrnfnt"
+          },
+          "hours/fontsize": {
+            "index": 4,
+            "type": "NUMBER",
+            "title": "FontSize",
+            "min": 0,
+            "max": 1440,
+            "value": 420.0
+          },
+          "hours/color": {
+            "index": 5,
+            "type": "COLOR",
+            "title": "Color",
+            "value": "#FFFFFFFF",
+            "toggles": 100,
+            "global": "gbctrls/sysmonet/mntbeta1"
+          },
+          "minutes": {
+            "index": 6,
+            "type": "FOLDER",
+            "title": "Minutes"
+          },
+          "minutes/string": {
+            "index": 7,
+            "type": "TEXT",
+            "title": "String",
+            "value": "$df(mm)$"
+          },
+          "minutes/font": {
+            "index": 8,
+            "type": "FONT",
+            "title": "Font",
+            "global_formula": "$gv(hours/font)$",
+            "value": "kfile://org.kustom.sdcard.000/fonts/Roboto-Medium.ttf",
+            "toggles": 100,
+            "global": "settings/conffnts/clckfnts/lscrnfnt"
+          },
+          "minutes/fontsize": {
+            "index": 9,
+            "type": "NUMBER",
+            "title": "FontSize",
+            "value": 20.0,
+            "min": 0,
+            "max": 1440,
+            "toggles": 10,
+            "global_formula": "$gv(hours/fontsize)$"
+          },
+          "minutes/color": {
+            "index": 10,
+            "type": "COLOR",
+            "title": "Color",
+            "value": "#FFFFFFFF",
+            "toggles": 100,
+            "global": "gbctrls/sysmonet/mntbeta1"
+          },
+          "leading": {
+            "index": 11,
+            "type": "NUMBER",
+            "title": "Leading",
+            "min": -720,
+            "max": 720,
+            "value": -122.0
+          },
+          "legal": {
+            "index": 12,
+            "type": "FOLDER",
+            "title": "LEGAL",
+            "description": "📜"
+          },
+          "legal/license": {
+            "index": 13,
+            "type": "LIST",
+            "title": "LICENSE",
+            "entries": "",
+            "toggles": 1
+          },
+          "legal/notice": {
+            "index": 14,
+            "type": "LIST",
+            "title": "NOTICE",
+            "entries": "This komponent is a recreation of the widget seen in Google's 'Android 12' and 'Material You' promotional material from Google I/O 2021."
+          },
+          "legal/©": {
+            "index": 15,
+            "type": "FOLDER",
+            "title": "©",
+            "description": "FOSS Licenses"
+          },
+          "legal/©/0": {
+            "index": 16,
+            "type": "LIST",
+            "title": "0",
+            "description": "Gobelin Design System",
+            "entries": "\"Gobelin Design System\", \"Copyright (c) 2021 Erik Bucik\", \"Licensed under the Apache License, Version 2.0 (the ''License'');\", \"You may not use this file except in compliance with the License.\", \"You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0\", \"Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an ''AS IS'' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\"",
+            "value": "Copyright (c) 2021 Erik Bucik"
+          },
+          "legal/©/1": {
+            "index": 17,
+            "type": "LIST",
+            "title": "1",
+            "description": "Roboto Type Family",
+            "entries": "\"Roboto Type Family\", \"Copyright (c) 2014 Google\", \"Licensed under the Apache License, Version 2.0 (the ''License'');\", \"You may not use this file except in compliance with the License.\", \"You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0\", \"Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an ''AS IS'' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\"",
+            "value": "Copyright (c) 2014 Google"
+          },
+          "❤️": {
+            "index": 18,
+            "type": "LIST",
+            "title": "❤️",
+            "entries": "\"☕ Say thanks and buy me a coffee\", \"https://ko-fi.com/erikbucik\", \"🌐 Visit my website\", \"https://klwp.erikbucik.com\", \"✉️ e-mail: klwp@erikbucik.com\", \"🤖 Reddit: u/erikbucik\", \"📷 Instagram: @erikbucik\", \"🐦 Twitter: @erikbucik\", \"👾 Discord: discord.gg/gXs86Hy\", \"💬 Telegram: t.me/erikbucik\""
+          }
+        },
+        "config_scale_value": 70.0,
+        "internal_animations": [
+          {
+            "type": "FORMULA",
+            "trigger": "aodnt",
+            "action": "FADE",
+            "duration": 2.0,
+            "delay": 0.0,
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 150.0
+          },
+          {
+            "type": "SCROLL_Y",
+            "action": "FADE",
+            "rule": "UP_TO_CENTER",
+            "speed": 400.0
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "action": "SCROLL",
+            "limit": 35.0
+          },
+          {
+            "type": "FORMULA",
+            "speed": 58.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "delay": 0.0,
+            "trigger": "gbctrls/shctpane",
+            "formula": "$if(ni(count)>0,1, 0)$",
+            "action": "SCROLL_INVERTED",
+            "limit": 0.0
+          },
+          {
+            "type": "FORMULA",
+            "speed": 10.0,
+            "angle": 90.0,
+            "duration": 4.0,
+            "delay": 0.0,
+            "trigger": "gbctrls/shctpane",
+            "formula": "$if(ni(count)>0,1, 0)$",
+            "action": "SCROLL_INVERTED"
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 1.0,
+            "trigger": "settings/confmclk",
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "action": "SCROLL_INVERTED",
+            "speed": 18.0,
+            "angle": 90.0,
+            "duration": 1.0,
+            "trigger": "settings/confmclk",
+            "formula": "$if(ni(count)>0,1, 0)$"
+          },
+          {
+            "type": "SWITCH",
+            "action": "SCROLL_INVERTED",
+            "speed": 10.0,
+            "angle": 90.0,
+            "duration": 3.0,
+            "trigger": "settings/confmclk",
+            "formula": "$if(ni(count)>0,1, 0)$"
+          }
+        ],
+        "position_offset_y": 42.0,
+        "position_offset_x": -8.0,
+        "internal_readonly": "V9JM285Wyx2UcrTf1tgGpk6TynySGGs8x7oCKAPfa8oc1mMBtLA6rJGGp2rS9_xn-dFsRP5ZpgRbl3go6as4I6X-A794Ke4EbTWUfq_8n4MRU0YBDyH0jNqcwF3EnWPWMZ8qt1sOb-UI0lTjzQPskQt-DQhR_uMvsohY6pKvuJuVoT7gV-MD2UwDpmftiOMYr9xUD2a82O4vCi4xigDmWFKSm4rRU_V2mhFrtcc8AxMQamCxC9UQem1eo7O9iswYF9y3TFAnjd53hXZkHJiZtaX-A794Ke4EM0mpwMdhYi6rnbIseIGrxOSEy5ByIckWu3sVh28vSX2wzXv_N6PmB3cdD4P4GlsGkYanatL3_Gct34VcnaQjc7mCy0PlbE8eDHv_ZPx4V0regrGG8RrN0aCyo6hnO6SbUIxQVkU5IBfUxbEVWuvlw8jd6oV7RZnYBoeDMDYTJqdP9kai9Jpfr0xuKRCvy0US7Jv1YXdr9LVodUekIOfce0vWxUGGvxF0aVZpgORNaGwl9UqCq6C4U0b14AXOeV9zmoRa51aRdnsx_ocR4Yk4TKWXb-Q5zhDLAxm73SdAWHL5KeiJA0NXvUjhj6fV-JA3d1IcyJlUuL6RE4IyvBvFEyOTK2G-l4w_OHMWI6fj3Bkrmxu5OrDLZ3_ymBbbyNKyBoeDMDYTJqe-c29iJW-NLW0H5f2AB71IeOu_antLvftwClvDl2CzUCeOOxkIwMqGkgpwYSnBG54Gh4MwNhMmp-GsPio38JLMTG4pEK_LRRLsm_Vhd2v0tTXvtOM-_NmzjYHid4_VtUalN-Jad46eVcUfqWYRlAS5oCGG3AmVrHyl_gO_eCnuBB4wyR4e5oSwnpLpSxhGEhdEwTa1Gd-65R1e2nTi4RVatIHSX0pNiLXyWFqoOWQnaIWJhW0uX3QeJC57SqUdOO69xs6DNO5oTTKL6__EwpgEuPVBOyL6i64fVC5QGezRhQvIySiC3yaQWBIRQ7-sRpznlFuZ29P7U0lZmnYvM2bCBBbXox8aXxhA3lTnXQ-ZWvmXabMpvc9OZt0JgN1B4-tSeyDbiF9xvSEGJbxcjXFS"
+      },
+      {
+        "internal_type": "TextModule",
+        "internal_toggles": {
+          "paint_color": 100,
+          "text_family": 100
+        },
+        "internal_formulas": {
+          "paint_color": ""
+        },
+        "text_expression": "$df(h:mm)$",
+        "text_family": "kfile://org.kustom.provider/fonts/Roboto-Light.ttf",
+        "text_size": 150.0,
+        "position_anchor": "TOPLEFT",
+        "position_offset_x": 478.0,
+        "position_offset_y": 156.0,
+        "internal_animations": [
+          {
+            "type": "FORMULA",
+            "trigger": "aodnt",
+            "action": "SCROLL_INVERTED",
+            "speed": 60.0,
+            "duration": 4.0,
+            "delay": 2.0,
+            "formula": "$if(ni(count)>0,1, r)$",
+            "ease": "OVERSHOOT"
+          },
+          {
+            "type": "FORMULA",
+            "trigger": "aodnt",
+            "action": "FADE_INVERTED",
+            "duration": 3.0,
+            "delay": 3.0,
+            "formula": "$if(ni(count)>0,1, r)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 80.0
+          },
+          {
+            "type": "SCROLL_Y",
+            "action": "FADE",
+            "rule": "UP_TO_CENTER",
+            "speed": 400.0
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 1.0,
+            "trigger": "settings/confmclk",
+            "formula": "$if(ni(count)>0,1, r)$"
+          }
+        ],
+        "internal_globals": {
+          "text_family": "settings/conffnts/clckfnts/lscrnfnt",
+          "paint_color": "gbctrls/sysmonet/mntbeta1"
+        },
+        "internal_title": "Uklck.Elements.MonetClock-Noti"
+      },
+      {
+        "internal_type": "TextModule",
+        "internal_toggles": {
+          "paint_color": 100,
+          "text_family": 100
+        },
+        "internal_formulas": {
+          "paint_color": ""
+        },
+        "text_expression": "$df(h:mm)$",
+        "text_family": "kfile://org.kustom.provider/fonts/Roboto-Light.ttf",
+        "text_size": 150.0,
+        "position_anchor": "TOPLEFT",
+        "position_offset_x": 478.0,
+        "position_offset_y": 156.0,
+        "internal_animations": [
+          {
+            "type": "SWITCH",
+            "trigger": "settings/confmclk",
+            "action": "SCROLL_INVERTED",
+            "speed": 60.0,
+            "duration": 4.0,
+            "delay": 0.0,
+            "formula": "$if(ni(count)>0,1, r)$",
+            "ease": "OVERSHOOT"
+          },
+          {
+            "type": "SWITCH",
+            "trigger": "settings/confmclk",
+            "action": "FADE_INVERTED",
+            "duration": 1.0,
+            "delay": 0.0,
+            "formula": "$if(ni(count)>0,1, r)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 80.0
+          },
+          {
+            "type": "SCROLL_Y",
+            "action": "FADE",
+            "rule": "UP_TO_CENTER",
+            "speed": 400.0
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          }
+        ],
+        "internal_globals": {
+          "text_family": "settings/conffnts/clckfnts/lscrnfnt",
+          "paint_color": "gbctrls/sysmonet/mntbeta1"
+        },
+        "internal_title": "Uklck.Elements.MonetClock-NotiPer"
+      },
+      {
+        "internal_type": "ProgressModule",
+        "color_bgcolor": "#4DFFFFFF",
+        "style_style": "CIRCLE",
+        "style_size": 20.0,
+        "style_height": 4.0,
+        "position_anchor": "TOPRIGHT",
+        "position_offset_x": 86.0,
+        "position_offset_y": 20.0,
+        "internal_toggles": {
+          "position_offset_x": 10,
+          "color_fgcolor": 10
+        },
+        "internal_formulas": {
+          "position_offset_x": "$if(bi(level) ~= \"100\", \"95\", 85)$",
+          "color_fgcolor": "$if(si(powersave) ~= \"1\", \"#fd6f43\", ce(si(wpcolor1), contrast))$"
+        },
+        "internal_animations": [
+          {
+            "type": "FORMULA",
+            "action": "SCROLL_INVERTED",
+            "speed": 10.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "delay": 5.0,
+            "formula": "$if(bi(charging) ~= \"1\", \"1\", 0)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE",
+            "duration": 2.0,
+            "delay": 5.0,
+            "formula": "$if(bi(charging) ~= \"1\", \"1\", 0)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 90.0,
+            "action": "FADE"
+          },
+          {
+            "type": "SWITCH",
+            "trigger": "settings/confstba",
+            "angle": 90.0,
+            "speed": 10.0,
+            "duration": 4.0,
+            "action": "SCROLL_INVERTED"
+          },
+          {
+            "type": "SWITCH",
+            "trigger": "settings/confstba",
+            "action": "FADE",
+            "duration": 3.0
+          },
+          {
+            "type": "FORMULA",
+            "formula": "$if(gv(settings/confbist) ~= \"Circle\", \"r\", 1)$",
+            "action": "FADE",
+            "duration": 1.0
+          }
+        ],
+        "internal_title": "Uklck.StatusBar.GrphBattery-CM"
+      },
+      {
+        "internal_type": "OverlapLayerModule",
+        "internal_title": "Uklck.StatusBar.GrphBattery-BP",
+        "internal_toggles": {
+          "position_offset_x": 10
+        },
+        "internal_formulas": {
+          "position_offset_x": "$if(bi(level) ~= \"100\", \"95\", 88)$"
+        },
+        "position_anchor": "TOPRIGHT",
+        "position_offset_y": 21.0,
+        "internal_animations": [
+          {
+            "type": "FORMULA",
+            "action": "SCROLL_INVERTED",
+            "speed": 10.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "delay": 5.0,
+            "formula": "$if(bi(charging) ~= \"1\", \"1\", 0)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE",
+            "duration": 2.0,
+            "delay": 5.0,
+            "formula": "$if(bi(charging) ~= \"1\", \"1\", 0)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "action": "FADE",
+            "rule": "UP_TO_CENTER",
+            "speed": 90.0
+          },
+          {
+            "type": "SWITCH",
+            "action": "SCROLL_INVERTED",
+            "speed": 10.0,
+            "angle": 90.0,
+            "duration": 4.0,
+            "trigger": "settings/confstba"
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 3.0,
+            "trigger": "settings/confstba"
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE",
+            "formula": "$if(gv(settings/confbist) ~= \"Battery Portrait\", \"r\", 1)$",
+            "duration": 1.0
+          }
+        ],
+        "viewgroup_items": [
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$if(si(powersave) ~= \"1\", \"#fd6f43\", ce(si(wpcolor1), contrast))$"
+            },
+            "shape_type": "RECT",
+            "shape_width": 7.0,
+            "shape_height": 4.0,
+            "position_anchor": "TOP"
+          },
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$if(si(powersave) ~= \"1\", \"#fd6f43\", ce(si(wpcolor1), contrast))$"
+            },
+            "shape_type": "RECT",
+            "shape_width": 12.0,
+            "shape_corners": 1.0,
+            "paint_style": "STROKE",
+            "paint_stroke": 3.0,
+            "position_padding_top": 2.0
+          },
+          {
+            "internal_type": "ProgressModule",
+            "internal_toggles": {
+              "color_fgcolor": 10
+            },
+            "internal_formulas": {
+              "color_fgcolor": "$ce(si(wpcolor1), contrast)$"
+            },
+            "progress_rotate_mode": "DEG270",
+            "color_bgcolor": "#00AAAAAA",
+            "style_size": 17.0,
+            "style_height": 10.0,
+            "position_anchor": "BOTTOM",
+            "position_padding_bottom": 3.0
+          }
+        ]
+      },
+      {
+        "internal_type": "OverlapLayerModule",
+        "internal_title": "Uklck.StatusBar.GrphBattery-BL",
+        "internal_toggles": {
+          "position_offset_x": 10
+        },
+        "internal_formulas": {
+          "position_offset_x": "$if(bi(level) ~= \"100\", \"95\", 88)$"
+        },
+        "position_anchor": "TOPRIGHT",
+        "position_offset_y": 22.0,
+        "internal_animations": [
+          {
+            "type": "FORMULA",
+            "action": "SCROLL_INVERTED",
+            "speed": 10.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "delay": 5.0,
+            "formula": "$if(bi(charging) ~= \"1\", \"1\", 0)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE",
+            "duration": 2.0,
+            "delay": 5.0,
+            "formula": "$if(bi(charging) ~= \"1\", \"1\", 0)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "action": "FADE",
+            "rule": "UP_TO_CENTER",
+            "speed": 90.0
+          },
+          {
+            "type": "SWITCH",
+            "action": "SCROLL_INVERTED",
+            "speed": 10.0,
+            "angle": 90.0,
+            "duration": 4.0,
+            "trigger": "settings/confstba"
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 3.0,
+            "trigger": "settings/confstba"
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE",
+            "formula": "$if(gv(settings/confbist) ~= \"Battery Landscape\", \"r\", 1)$",
+            "duration": 1.0
+          }
+        ],
+        "config_rotate_mode": "DEG90",
+        "viewgroup_items": [
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$if(si(powersave) ~= \"1\", \"#fd6f43\", ce(si(wpcolor1), contrast))$"
+            },
+            "shape_type": "RECT",
+            "shape_width": 7.0,
+            "shape_height": 4.0,
+            "position_anchor": "TOP"
+          },
+          {
+            "internal_type": "ShapeModule",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$if(si(powersave) ~= \"1\", \"#fd6f43\", ce(si(wpcolor1), contrast))$"
+            },
+            "shape_type": "RECT",
+            "shape_width": 12.0,
+            "shape_corners": 1.0,
+            "paint_style": "STROKE",
+            "paint_stroke": 3.0,
+            "position_padding_top": 2.0
+          },
+          {
+            "internal_type": "ProgressModule",
+            "internal_toggles": {
+              "color_fgcolor": 10
+            },
+            "internal_formulas": {
+              "color_fgcolor": "$ce(si(wpcolor1), contrast)$"
+            },
+            "progress_rotate_mode": "DEG270",
+            "color_bgcolor": "#00AAAAAA",
+            "style_size": 17.0,
+            "style_height": 10.0,
+            "position_anchor": "BOTTOM",
+            "position_padding_bottom": 3.0
+          }
+        ]
+      },
+      {
+        "internal_type": "TextModule",
+        "text_expression": "$bi(level)$ %",
+        "text_family": "kfile://org.kustom.provider/fonts/Roboto-Regular.ttf",
+        "text_size": 25.0,
+        "position_anchor": "TOPRIGHT",
+        "position_offset_x": 28.0,
+        "position_offset_y": 21.0,
+        "internal_animations": [
+          {
+            "type": "FORMULA",
+            "action": "SCROLL_INVERTED",
+            "speed": 10.0,
+            "angle": 90.0,
+            "duration": 2.0,
+            "delay": 5.0,
+            "formula": "$if(bi(charging) ~= \"1\", \"1\", 0)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE",
+            "duration": 2.0,
+            "delay": 5.0,
+            "formula": "$if(bi(charging) ~= \"1\", \"1\", 0)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "action": "FADE",
+            "rule": "UP_TO_CENTER",
+            "speed": 90.0
+          },
+          {
+            "type": "SWITCH",
+            "action": "SCROLL_INVERTED",
+            "speed": 10.0,
+            "angle": 90.0,
+            "duration": 4.0,
+            "trigger": "settings/confstba"
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 3.0,
+            "trigger": "settings/confstba"
+          }
+        ],
+        "internal_toggles": {
+          "paint_color": 10
+        },
+        "internal_formulas": {
+          "paint_color": "$ce(si(wpcolor1), contrast)$"
+        },
+        "internal_title": "Uklck.StatusBar.PercBattery"
+      },
+      {
+        "internal_type": "TextModule",
+        "text_expression": "$if(gv(settings/confcarr)=\"\",gv(gbctrls/carriegn), gv(settings/confcarr))$",
+        "text_size": 25.0,
+        "position_anchor": "TOPLEFT",
+        "position_offset_x": 28.0,
+        "position_offset_y": 21.0,
+        "text_family": "kfile://org.kustom.provider/fonts/Roboto-Regular.ttf",
+        "internal_animations": [
+          {
+            "type": "SCROLL_Y",
+            "action": "FADE",
+            "rule": "UP_TO_CENTER",
+            "speed": 90.0
+          },
+          {
+            "type": "SWITCH",
+            "action": "SCROLL_INVERTED",
+            "speed": 10.0,
+            "angle": 90.0,
+            "duration": 4.0,
+            "trigger": "settings/confstba"
+          },
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 3.0,
+            "trigger": "settings/confstba"
+          }
+        ],
+        "internal_toggles": {
+          "paint_color": 10
+        },
+        "internal_formulas": {
+          "paint_color": "$ce(si(wpcolor1), contrast)$"
+        },
+        "internal_title": "Uklck.StatusBar.CarrierLbl"
+      },
+      {
+        "internal_type": "OverlapLayerModule",
+        "internal_title": "Uklck.Elements.DateAlarm",
+        "position_anchor": "TOPLEFT",
+        "position_offset_x": 55.0,
+        "position_offset_y": 352.0,
+        "internal_animations": [
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 80.0
+          },
+          {
+            "type": "SCROLL_Y",
+            "action": "FADE",
+            "rule": "UP_TO_CENTER",
+            "speed": 400.0
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          }
+        ],
+        "viewgroup_items": [
+          {
+            "internal_type": "TextModule",
+            "text_expression": "$df(EEE)$, $df(MMM d)$",
+            "text_size": 28.0,
+            "text_filter": [
+              "CAP"
+            ],
+            "text_family": "kfile://org.kustom.provider/fonts/Roboto-Regular.ttf",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$ce(si(wpcolor1), contrast)$"
+            },
+            "position_anchor": "TOPLEFT",
+            "position_padding_bottom": 108.0
+          },
+          {
+            "internal_type": "TextModule",
+            "text_expression": "$df(\"h:mm\", si(alarmd))$",
+            "text_size": 28.0,
+            "position_padding_top": 2.0,
+            "text_family": "kfile://org.kustom.provider/fonts/Roboto-Regular.ttf",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$if(si(alarmon) ~= \"1\", ce(si(wpcolor1), contrast), #00000000)$"
+            },
+            "position_anchor": "CENTERLEFT",
+            "position_padding_left": 50.0
+          },
+          {
+            "internal_type": "FontIconModule",
+            "icon_set": "kfile://org.kustom.provider/icons/material.ttf",
+            "icon_icon": "alarm",
+            "icon_size": 34.0,
+            "position_anchor": "CENTERLEFT",
+            "internal_toggles": {
+              "paint_color": 10
+            },
+            "internal_formulas": {
+              "paint_color": "$if(si(alarmon) ~= \"1\", ce(si(wpcolor1), contrast), #00000000)$"
+            }
+          }
+        ]
+      },
+      {
+        "internal_type": "FontIconModule",
+        "icon_set": "kfile://org.kustom.provider/icons/material.ttf",
+        "icon_icon": "lock_outline",
+        "icon_size": 50.0,
+        "paint_color": "#B3FFFFFF",
+        "position_anchor": "BOTTOM",
+        "position_offset_y": 254.0,
+        "internal_animations": [
+          {
+            "type": "SWITCH",
+            "action": "FADE",
+            "duration": 2.0,
+            "trigger": "settings/conficon"
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "FROM_CENTER",
+            "speed": 150.0
+          },
+          {
+            "type": "SCROLL_Y",
+            "action": "FADE",
+            "rule": "UP_TO_CENTER",
+            "speed": 400.0
+          },
+          {
+            "type": "SCROLL_Y",
+            "rule": "UP_TO_CENTER",
+            "speed": 15.0,
+            "limit": 35.0
+          }
+        ],
+        "internal_events": [
+          {
+            "type": "SINGLE_TAP",
+            "action": "KUSTOM_ACTION",
+            "kustom_action": "UNLOCK"
+          }
+        ],
+        "internal_toggles": {
+          "paint_color": 100
+        },
+        "internal_formulas": {
+          "paint_color": ""
+        },
+        "internal_title": "Uklck.Elements.UnlockHelper",
+        "internal_globals": {
+          "paint_color": "gbctrls/sysmonet/mntbeta1"
+        }
+      },
+      {
+        "internal_type": "TextModule",
+        "text_expression": "$bi(level)$ % • $if(bi(charging) ~= \"1\", \"Connected\", Disconnected)$ • $if(bi(charging) = 0, Discharged in, Charged in)$ $tf(bi(fullempty))$",
+        "text_size": 22.0,
+        "position_anchor": "BOTTOM",
+        "position_offset_y": 35.0,
+        "internal_animations": [
+          {
+            "type": "FORMULA",
+            "speed": 5.0,
+            "angle": 90.0,
+            "action": "SCROLL_INVERTED",
+            "duration": 3.0,
+            "delay": 6.0,
+            "formula": "$if(bi(charging) ~= \"1\", \"1\", 0)$"
+          },
+          {
+            "type": "FORMULA",
+            "action": "FADE_INVERTED",
+            "duration": 3.0,
+            "delay": 6.0,
+            "formula": "$if(bi(charging) ~= \"1\", \"1\", 0)$"
+          },
+          {
+            "type": "SCROLL_Y",
+            "action": "SCROLL_INVERTED",
+            "rule": "FROM_CENTER",
+            "speed": 20.0
+          },
+          {
+            "type": "SCROLL_Y",
+            "action": "FADE",
+            "rule": "UP_TO_CENTER",
+            "speed": 400.0
+          }
+        ],
+        "text_family": "kfile://org.kustom.provider/fonts/Roboto-Regular.ttf",
+        "internal_toggles": {
+          "paint_color": 10
+        },
+        "internal_formulas": {
+          "paint_color": "$ce(si(wpcolor1), contrast)$"
+        },
+        "text_size_type": "FIXED_WIDTH",
+        "text_width": 360.0,
+        "text_lines": 2.0,
+        "text_align": "CENTER",
+        "internal_title": "Uklck.Elements.BatteryCharInfo"
+      },
+      {
+        "internal_type": "ShapeModule",
+        "internal_toggles": {
+          "paint_color": 10
+        },
+        "internal_formulas": {
+          "paint_color": "$ce(si(wpcolor2), contrast)$"
+        },
+        "shape_type": "RECT",
+        "shape_width": 126.0,
+        "shape_height": 5.0,
+        "shape_corners": 100.0,
+        "position_anchor": "BOTTOM",
+        "position_offset_y": 10.0,
+        "internal_animations": [
+          {
+            "type": "SWITCH",
+            "trigger": "alwayson",
+            "speed": 10.0,
+            "angle": 90.0,
+            "duration": 3.0,
+            "delay": 0.0
+          },
+          {
+            "type": "SWITCH",
+            "speed": 10.0,
+            "angle": 90.0,
+            "duration": 3.0,
+            "delay": 0.0,
+            "trigger": "settings/confnvba"
+          }
+        ],
+        "internal_title": "Uklck.NavBar.GestureHint"
+      }
+    ]
+  }
+}

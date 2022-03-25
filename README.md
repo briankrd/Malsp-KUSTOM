@@ -3,7 +3,7 @@ Malsp is a preset for KLCK that brings the AOSP lock screen experience to older 
 
 ![repository-open-graph-template](https://user-images.githubusercontent.com/51493723/159220061-e0c4900a-9cf4-49a5-b067-cc33fcc2fb0f.jpg)
 
-## Current features (beta1.1 twodotzero)
+## Current features (up to beta1.1 twodotzero)
 
 - Like android swipe, notification and status bar animations
 
@@ -15,7 +15,7 @@ Malsp is a preset for KLCK that brings the AOSP lock screen experience to older 
 
 - Customize battery icon (3 styles)
 
-- Hide navigation hint (the truth is that the hint is useless but to follow the aesthetics)
+- Toggle navigation hint visibility (the truth is that the hint is useless but to follow the aesthetics)
 
 - Force small clock
 

@@ -3,15 +3,15 @@ Malsp is a preset for KLCK that brings the AOSP lock screen experience to older 
 
 ![repository-open-graph-template](https://user-images.githubusercontent.com/51493723/159220061-e0c4900a-9cf4-49a5-b067-cc33fcc2fb0f.jpg)
 
-## Current features (up to beta1.1 twodotzero)
+## Current features (up to beta2 twodotzero)
 
 - Like android swipe, notification and status bar animations
 
 - Toggle lock icon visibility
 
-- Private notifications (Experimental)
+- Private notifications
 
-- Custom fonts (for now, only works on clock)
+- Custom fonts
 
 - Customize battery icon (3 styles)
 
@@ -23,7 +23,15 @@ Malsp is a preset for KLCK that brings the AOSP lock screen experience to older 
 
 - Toggle battery percentage visibility
 
-- Toggle small media control
+- Small media control
+
+- Network and ringer icons in the status bar
+
+- Interface layouts (Experimental)
+
+- Tiramisu media controls
+
+- Adaptive notification group bar (Experimental)
 
 ## Planned features
 
@@ -31,17 +39,15 @@ Malsp is a preset for KLCK that brings the AOSP lock screen experience to older 
 
 - Loading animation (icon at bottom center)
 
-- Change fonts of the rest of the interface
-
 - More battery icons
-
-- Clock layouts
-
-- Tiramisu media controls
 
 - Shortcuts
 
-- Network icons in the status bar
+- On-Screen Settings
+
+- Clock face animations
+
+- Clear all notifications button
 
 ## Screenshots
 
@@ -58,7 +64,7 @@ After that, it's a matter of opening the KLCK application and loading the preset
 
 ## Downloads
 
-Lastest Beta on [Releases section](https://github.com/briankrd/Malsp-KUSTOM/releases/tag/beta1.1-twodotzero)
+Lastest Beta on [Releases section](https://github.com/briankrd/Malsp-KUSTOM/releases/tag/beta2-twodotzero)
 
 ## Settings location
 

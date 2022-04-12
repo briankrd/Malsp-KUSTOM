@@ -37,7 +37,7 @@ Malsp is a preset for KLCK that brings the AOSP lock screen experience to older 
 
 - Animation when connecting a charger
 
-- Loading animation (icon at bottom center)
+- Charging animation (icon at bottom center)
 
 - More battery icons
 

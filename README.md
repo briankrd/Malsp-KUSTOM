@@ -1,4 +1,4 @@
-# Modern Android Lock Screen ~~Overlay~~ Project [**PRIVATE BUILDS**]
+# Modern Android Lock Screen ~~Overlay~~ Project [**PRIVATE COMPILATIONS THAT I WASN'T GOING TO UPLOAD BUT I PLAN TO DO IT ONLY THAT I'M LAZY LOL BUT I'LL UPLOAD THEM AT ANY TIME**]
 These builds are completely experimental, here are the works I did privately before "beta1 twodotzero" that I didn't plan to release, these builds will have both features that were deprecated or temporarily pulled, such as bugs in animations, features and other things.
 
 Being compilations made without version control or change log, it will be organized in the source section instead of being in the releases section, so to download all these presets, you can do it as a ZIP package from the "Code" button.

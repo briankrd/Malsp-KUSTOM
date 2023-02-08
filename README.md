@@ -1,9 +1,9 @@
-# Modern Android Lock Screen ~~Overlay~~ Project
+# Modern Android Lock Screen Project
 Malsp is a preset for KLCK that brings the AOSP lock screen experience to older devices and OEM Android distributions with some additional customization features.
 
 ![repository-open-graph-template](https://user-images.githubusercontent.com/51493723/159220061-e0c4900a-9cf4-49a5-b067-cc33fcc2fb0f.jpg)
 
-## Current features (up to beta2 twodotzero)
+## Current features (up to beta2 build 2047)
 
 - Like android swipe, notification and status bar animations
 
@@ -64,7 +64,7 @@ After that, it's a matter of opening the KLCK application and loading the preset
 
 ## Downloads
 
-Lastest Beta on [Releases section](https://github.com/briankrd/Malsp-KUSTOM/releases/tag/beta2-twodotzero)
+Lastest Beta on [Releases section](https://github.com/briankrd/Malsp-KUSTOM/releases/tag/b2047)
 
 ## Settings location
 

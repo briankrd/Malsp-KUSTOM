@@ -1,7 +1,7 @@
 # Modern Android Lock Screen Project
 Malsp is a preset for KLCK that brings the AOSP lock screen experience to older devices and OEM Android distributions with some additional customization features.
 
-![repository-open-graph-template](https://user-images.githubusercontent.com/51493723/159220061-e0c4900a-9cf4-49a5-b067-cc33fcc2fb0f.jpg)
+![repository-open-graph-template](https://user-images.githubusercontent.com/51493723/217698608-f15c79a3-b74d-40db-a81b-199a223cb789.jpg)
 
 ## Current features (up to beta2 build 2047)
 

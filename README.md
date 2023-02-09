@@ -1,5 +1,5 @@
 # Modern Android Lock Screen Project
-Malsp is a preset for KLCK that brings the AOSP lock screen experience to older devices and OEM Android distributions with some additional customization features.
+Malsp is a preset for KLCK that brings the Google Pixel lock screen experience to older devices and OEM Android distributions with some additional customization features.
 
 ![repository-open-graph-template](https://user-images.githubusercontent.com/51493723/217698608-f15c79a3-b74d-40db-a81b-199a223cb789.jpg)
 

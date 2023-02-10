@@ -65,10 +65,10 @@ Malsp is a preset for KLCK that brings the Google Pixel lock screen experience t
 ###### "Main" and "General" page in On-Screen Settings (Light/Dark Mode):
 ![Screenshot_20230209-010740](https://user-images.githubusercontent.com/51493723/217745709-e89a9a15-10ec-40a4-b20a-b383957485af.png) ![Screenshot_20230209-034240](https://user-images.githubusercontent.com/51493723/217749570-e4499e6a-f49a-473f-b3a8-11bc8c84e0d0.png)
 
-###### Android 13 media control with animated progress bar:
+###### Large media control with animated progress bar:
 ![Screenshot_20230209-011652](https://user-images.githubusercontent.com/51493723/217745898-3e6e7f49-3968-4515-8673-a1ff468cfb8b.png)
 
-###### New mini media control:
+###### New small media control:
 ![Screenshot_20230209-015106](https://user-images.githubusercontent.com/51493723/217746117-14869846-17a7-4f7b-9be2-c3f1cfa9be23.png)
 
 ###### Battery charging info, custom carrier name and ripple animation:

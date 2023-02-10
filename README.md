@@ -23,7 +23,7 @@ Malsp is a preset for KLCK that brings the Google Pixel lock screen experience t
 
 - Toggle battery percentage visibility.
 
-- Small (Mini), Medium (Android 12) and Large (Android 13) media controls.
+- Small, Medium (Android 12) and Large (Android 13) media controls.
 
 - Network, Bluetooth and ringer icons in the status bar.
 

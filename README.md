@@ -5,7 +5,7 @@ Malsp is a preset for KLCK that brings the Google Pixel lock screen experience t
 
 ## Current features (up to beta3 build 3199)
 
-- Android animations traced as accurately as possible to provide a Google Pixel-like experience.
+- Android animations traced as accurately as possible to provide a Google Pixel-like experience (There are still some animations missing, but I will add them in the next updates as far as KLCK limits allow me).
 
 - Toggle lock icon visibility.
 

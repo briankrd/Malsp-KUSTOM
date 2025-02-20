@@ -1,61 +1,71 @@
 # Modern Android Lock Screen Project
-Malsp is a preset for KLCK that brings the Google Pixel lock screen experience to older devices and OEM Android distributions with some additional customization features.
+Malsp is a preset for KLCK that delivers the Google Pixel "Material You" experience to the lock screen of devices with OEM and older Android versions, offering enhanced customization options.
 
 ![repository-open-graph-template](https://user-images.githubusercontent.com/51493723/217698608-f15c79a3-b74d-40db-a81b-199a223cb789.jpg)
 
-## Current features (up to beta3 build 3199)
+## Features
 
-- Android animations traced as accurately as possible to provide a Google Pixel-like experience (There are still some animations missing, but I will add them in the next updates as far as KLCK limits allow me).
+🔒 Toggle lock icon visibility.
 
-- Toggle lock icon visibility.
+🕵️‍♂️ Private notifications.
 
-- Private notifications.
+🇫 Custom fonts.
 
-- Custom fonts.
+🔋 Custom battery icon (3 styles).
 
-- Custom battery icon (3 styles).
+➖ Customizable size and visibility of the navigation bar (this bar is useless but follows the aesthetics of the theme).
 
-- Customizable size and visibility of the navigation hint (the truth is that the hint is useless but to follow the aesthetics).
+🔢 Force small clock.
 
-- Force small clock.
+📶 Custom carrier name.
 
-- Custom carrier name.
+🪫 Toggle battery percentage visibility.
 
-- Toggle battery percentage visibility.
+🎵 Small, Medium (Android 12) and Large (Android 13) media controls.
 
-- Small, Medium (Android 12) and Large (Android 13) media controls.
+🛜 Network, Bluetooth and ringer icons in the status bar.
 
-- Network, Bluetooth and ringer icons in the status bar.
+📐 Interface layouts (Experimental).
 
-- Interface layouts (Experimental).
+⚙️ On-Screen Settings.
 
-- Adaptive "Grouped notifications bar" (Experimental) [Like Android 13].
+🎨 Simulated Monet Theming.
 
-- Ripple animation when connecting a charger.
+## User Experience
 
-- On-Screen Settings.
+I worked on perfecting details like animations and how the lock screen reacts to different interactions to give the user the most immersive experience possible, with details like:
 
-- Simulated Monet Theming.
+Wave animation when plugging in the charger.
+
+Smooth transitions when opening, closing and navigating On-screen Settings.
+
+Smooth notification and clock animations in all layouts.
+
+Media control animations.
+
+Visual and haptic feedback when touching or swiping.
+
+Dynamic interface elements such as status icons and notification container.
 
 ## Planned features
 
-- Charging animation (icon at bottom center).
+- Animated charging icon.
 
 - More battery icons.
 
 - Shortcuts.
 
-- Clock animation (Dynamic font thickness) [I don't know if I can do it but I'll try].
+- Dynamic clock font thickness [I don't know if I can do it, but I'll try].
 
-- "Clear all" notifications button.
+- "Clear all" button for notifications.
 
 - Expanded Media Control.
 
 - Weather in "At a glance".
 
-- More options for "On-Screen settings".
+- More options for On-Screen settings.
 
-- Option to minimize notifications to icons in "At a glance" (Like Always On Display icons).
+- AOD style notifications.
 
 ## Screenshots
 
@@ -71,10 +81,10 @@ Malsp is a preset for KLCK that brings the Google Pixel lock screen experience t
 ###### New small media control:
 ![Screenshot_20230209-015106](https://user-images.githubusercontent.com/51493723/217746117-14869846-17a7-4f7b-9be2-c3f1cfa9be23.png)
 
-###### Battery charging info, custom carrier name and ripple animation:
+###### Battery charging info, custom carrier name and the charger wave animation:
 ![Screenshot_20230209-015759](https://user-images.githubusercontent.com/51493723/217746298-0f593cf0-ec2e-4c7b-a93b-35327ae6525c.png)
 
-###### Preview Mode in "On-Screen Settings" with "Force Small Clock" option enabled:
+###### Preview Mode in On-Screen Settings with "Force Small Clock" option enabled:
 ![Screenshot_20230209-015829](https://user-images.githubusercontent.com/51493723/217746471-51cc41e4-d744-4d2d-be29-3a4fe5d2dcd3.png)
 
 ###### "One UI" Layout with custom UI font, private notifications, circle battery icon, battery percentage and dark mode enabled:

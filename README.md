@@ -35,19 +35,19 @@ Malsp is a preset for KLCK that delivers the Google Pixel "Material You" experie
 
 I worked on perfecting details like animations and how the lock screen reacts to different interactions to give the user the most immersive experience possible, with details like:
 
-Wave animation when plugging in the charger.
+- Wave animation when plugging in the charger.
 
-Smooth transitions when opening, closing and navigating On-screen Settings.
+- Smooth transitions when opening, closing and navigating On-screen Settings.
 
-Smooth notification and clock animations in all layouts.
+- Smooth animations on the clock and notifications.
 
-Media control animations.
+- Media control animations.
 
-Visual and haptic feedback when touching or swiping.
+- Visual response to overscroll and touching the screen.
 
-Dynamic interface elements such as status icons and notification container.
+- Dynamic interface elements such as status icons and notification container.
 
-## Planned features
+## Features under development
 
 - Animated charging icon.
 
